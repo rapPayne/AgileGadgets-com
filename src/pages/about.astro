@@ -1,40 +1,64 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>About Agile Gadgets</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+<BaseLayout pageTitle="About Agile Gadgets">
+  <p>
+    Focused on creating software that runs on the web and mobile devices. So ...
+  </p>
+  <ul>
+    <li>React</li>
+    <li>Angular</li>
+    <li>HTML and CSS</li>
+    <li>JavaScript</li>
+    <li>React Native</li>
+    <li>Flutter</li>
+  </ul>
+  <h1>About Rap</h1>
+  <p>
+    Given a mind to grok software development and the ability to take
+    complicated topics and make them easy to understand, I write software and
+    teach others to do the same.
+  </p>
+  <p>Here are a few facts about me:</p>
+  <ul>
+    <li>My name is {identity.firstName}.</li>
+    <li>
+      I live in {identity.country} and I work as a {identity.occupation}.
+    </li>
+    {
+      identity.hobbies.length >= 2 && (
+        <li>
+          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+        </li>
+      )
+    }
+  </ul>
+  <p>My skills are:</p>
+  <ul>
+    {skills.map((skill) => <li>{skill}</li>)}
+  </ul>
 
-    <h1>About Me</h1>
-    <h2>... and my new Astro site!</h2>
-    <h1>About Agile Gadgets</h1>
-    <p>
-      Focused on creating software that runs on the web and mobile devices. So
-      ...
-    </p>
-    <ul>
-      <li>React</li>
-      <li>Angular</li>
-      <li>HTML and CSS</li>
-      <li>JavaScript</li>
-      <li>React Native</li>
-      <li>Flutter</li>
-    </ul>
-    <h1>About Rap</h1>
-    <p>
-      Given a mind to grok software development and the ability to take
-      complicated topics and make them easy to understand, I write software and
-      teach others to do the same.
-    </p>
-  </body>
-</html>
+  {happy && <p>I am happy to be learning Astro!</p>}
+
+  {finished && <p>I finished this tutorial!</p>}
+
+  {
+    goal === 3 ? (
+      <p>My goal is to finish in 3 days.</p>
+    ) : (
+      <p>My goal is not 3 days.</p>
+    )
+  }
+</BaseLayout>
