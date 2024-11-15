@@ -1,0 +1,47 @@
+---
+// Navigation.astro
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Courses", href: "/courses" },
+];
+
+// Get current path to highlight active link
+const pathname = new URL(Astro.request.url).pathname;
+---
+
+<nav>
+  <a href="/" class=""><img src="/images/AgileMan.jpg" alt="Agile Gadgets logo"/></a>
+  {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+</nav>
+<style is:global>
+  nav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: white;
+    color: blue;
+
+    & a {
+      color: blue;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    & img {
+      height: 1em;
+    }
+  }
+</style>

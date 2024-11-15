@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { format } from "date-fns";
+
+const posts = await Astro.glob("./*.md");
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime(),
+);
+---
+
+<Layout title="Blog">
+  <main>
+    <h1>Blog</h1>
+    <div class="posts">
+      {
+        sortedPosts.map((post) => (
+          <article class="post-preview">
+            <h2>
+              <a href={post.url}>{post.frontmatter.title}</a>
+            </h2>
+            <div class="metadata">
+              <time datetime={post.frontmatter.date}>
+                {format(new Date(post.frontmatter.date), "MMMM d, yyyy")}
+              </time>
+              {post.frontmatter.author && (
+                <span class="author">by {post.frontmatter.author}</span>
+              )}
+            </div>
+            {post.frontmatter.description && (
+              <p class="description">{post.frontmatter.description}</p>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 2em;
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  .posts {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .post-preview {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    border: 1px solid rgba(var(--accent-light), 25%);
+  }
+
+  .post-preview h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .post-preview a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .post-preview a:hover {
+    text-decoration: underline;
+  }
+
+  .metadata {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+
+  .author {
+    margin-left: 1rem;
+  }
+
+  .description {
+    margin: 1rem 0 0;
+    color: #e2e8f0;
+  }
+</style>
