@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'RapPaynesHandwriting';
+  src: url('/fonts/RapPaynesHandwriting-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: RapPaynesHandwriting, sans-serif;
+}
