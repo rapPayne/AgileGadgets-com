@@ -8,6 +8,7 @@ const { frontmatter } = Astro.props;
 <Layout title={frontmatter.title}>
   <article class="blog-post">
     <header>
+      <img src={frontmatter.mainImageUrl} alt="" />
       <h1>{frontmatter.title}</h1>
       <div class="metadata">
         <time datetime={frontmatter.date}>
@@ -28,6 +29,7 @@ const { frontmatter } = Astro.props;
 
 <style>
   .blog-post {
+    font-family: Menlo,Arial,sans-serif;;
     max-width: 65ch;
     margin: 0 auto;
     padding: 2rem;
@@ -37,14 +39,14 @@ const { frontmatter } = Astro.props;
     margin-bottom: 2rem;
   }
 
+
   h1 {
     font-size: 2.5rem;
-    color: white;
     margin-bottom: 0.5rem;
   }
 
   .metadata {
-    color: #94a3b8;
+    color: light-dark(var(--dark1), var(--lite1));
     font-size: 0.9rem;
   }
 
@@ -53,14 +55,18 @@ const { frontmatter } = Astro.props;
   }
 
   .content {
-    color: #e2e8f0;
+    color: light-dark(var(--dark1), var(--lite1));
     line-height: 1.7;
+
+    h1,h2,h3,h4,h5,h6 {
+      color: light-dark(var(--dark2), var(--lite2));
+    }
+
   }
 
-  .content :global(h2) {
+  /* .content :global(h2) {
     font-size: 1.8rem;
     margin: 2rem 0 1rem;
-    color: white;
   }
 
   .content :global(p) {
@@ -74,10 +80,10 @@ const { frontmatter } = Astro.props;
   }
 
   .content :global(code) {
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
+    background: rgba(var(--lite2), 12%);
+    color: rgb(var(--lite2));
     padding: 0.2em 0.4em;
     border-radius: 0.25rem;
     font-size: 0.9em;
-  }
+  } */
 </style>

@@ -1,0 +1,44 @@
+---
+import TagChip from "./TagChip.astro";
+interface Props {
+	post: {
+    title: string;
+    description: string;
+    tags: List<string>;
+    mainImageUrl: string;
+  };
+}
+
+const { post } = Astro.props;
+const {title, description, tags, homePageImageUrl, url } = post.frontmatter;
+---
+
+<li>
+  <a href={url}>
+    <img src={homePageImageUrl} alt="" />
+    <div>
+      <h4>{title}</h4>
+      <p>{description}</p>
+      {tags?.map(tag => <TagChip tag={tag} />)}
+    </div>
+  </a>
+</li>
+
+<style>
+  li {
+    list-style-type: none;
+    max-width: 300px;
+    border: 1px solid light-dark(var(--dark1),var(--lite1));
+    margin: 5px;
+    background-color: light-dark(var(--lite2),var(--dark2));
+
+    img {
+      width: 100%;
+    }
+
+    h4 {
+      text-align: center;
+      margin: 0;
+    }
+  }
+  </style>

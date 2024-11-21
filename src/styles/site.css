@@ -7,4 +7,27 @@
 
 :root {
   font-family: RapPaynesHandwriting, sans-serif;
+  color-scheme:  light dark;
+  color: light-dark(var(--dark1), var(--lite1));
+  background-color: light-dark(var(--lite1), var(--dark1));
+
+  /* CSS HEX */
+  --dark2: #be1526ff;
+  --dark1: #320a28ff;
+  --dark3: #28536bff;
+  --lite1: #fbfbfbff;
+  --lite2: #d8e4ffff;
+  --lite3: #eaf0fdff;
+}
+
+code {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
 }
