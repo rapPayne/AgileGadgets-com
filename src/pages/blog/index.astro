@@ -14,7 +14,7 @@ const sortedPosts = posts.sort(
 <Layout title="AG Blog">
   <main>
     <h1>Blog</h1>
-      <div class="postsList">
+    <div class="postsList">
       {
         sortedPosts.map((post) => (
           <article>
@@ -30,16 +30,16 @@ const sortedPosts = posts.sort(
                   )}
                 </span>
               </div>
-              <h2>
-                {post.frontmatter.title}
-              </h2>
+              <h2>{post.frontmatter.title}</h2>
               {post.frontmatter.description && (
                 <p class="description">{post.frontmatter.description}</p>
               )}
               <div class="tags">
-              {post.frontmatter.tags?.map(t => <TagChip tag={t} />)}
+                {post.frontmatter.tags?.map((t: string) => (
+                  <TagChip tag={t} />
+                ))}
               </div>
-            </div> 
+            </div>
           </article>
         ))
       }
@@ -71,31 +71,31 @@ const sortedPosts = posts.sort(
     display: grid;
     gap: 2rem;
 
-      & article {
-        border: 1px solid light-dark(var(--dark1), var(--lite1));
+    & article {
+      border: 1px solid light-dark(var(--dark1), var(--lite1));
+      display: flex;
+      padding: 0;
+
+      & img {
+        height: 100%;
+        margin-right: 10px;
+      }
+      & div.date_and_author {
         display: flex;
-        padding: 0;
+        justify-content: space-between;
 
-        & img {
-          height: 100%;
-          margin-right: 10px;
+        time {
+          font-size: 0.75rem;
         }
-        & div.date_and_author {
-          display: flex;
-          justify-content: space-between;
-
-          time {
-            font-size: 0.75rem;
-          }
-          span.author {
-            font-size: 0.75rem;
-          }
-        }
-        & p.description {
-          margin: 1rem 0 0;
-          color: light-dark(var(--dark1),var(--lite1));
+        span.author {
+          font-size: 0.75rem;
         }
       }
+      & p.description {
+        margin: 1rem 0 0;
+        color: light-dark(var(--dark1), var(--lite1));
+      }
+    }
   }
 
   /* .post-preview {

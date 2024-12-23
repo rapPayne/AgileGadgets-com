@@ -1,16 +1,17 @@
 ---
 import TagChip from "./TagChip.astro";
 interface Props {
-	post: {
+  post: {
     title: string;
     description: string;
-    tags: List<string>;
+    tags: string[];
     mainImageUrl: string;
+    frontmatter: any;
   };
 }
 
 const { post } = Astro.props;
-const {title, description, tags, homePageImageUrl, url } = post.frontmatter;
+const { title, description, tags, homePageImageUrl, url } = post.frontmatter;
 ---
 
 <li>
@@ -19,7 +20,7 @@ const {title, description, tags, homePageImageUrl, url } = post.frontmatter;
     <div>
       <h4>{title}</h4>
       <p>{description}</p>
-      {tags?.map(tag => <TagChip tag={tag} />)}
+      {tags?.map((tag: string) => <TagChip tag={tag} />)}
     </div>
   </a>
 </li>
@@ -28,9 +29,9 @@ const {title, description, tags, homePageImageUrl, url } = post.frontmatter;
   li {
     list-style-type: none;
     max-width: 300px;
-    border: 1px solid light-dark(var(--dark1),var(--lite1));
+    border: 1px solid light-dark(var(--dark1), var(--lite1));
     margin: 5px;
-    background-color: light-dark(var(--lite2),var(--dark2));
+    background-color: light-dark(var(--lite2), var(--dark2));
 
     img {
       width: 100%;
@@ -41,4 +42,4 @@ const {title, description, tags, homePageImageUrl, url } = post.frontmatter;
       margin: 0;
     }
   }
-  </style>
+</style>
