@@ -12,6 +12,7 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, description, tags, homePageImageUrl, url } = post.frontmatter;
+console.log({ url });
 ---
 
 <li>
@@ -33,10 +34,18 @@ const { title, description, tags, homePageImageUrl, url } = post.frontmatter;
     margin: 5px;
     background-color: light-dark(var(--lite2), var(--dark2));
 
+    a {
+      color: light-dark(var(--dark1), var(--lite1));
+      text-decoration: none;
+    }
+
     img {
       width: 100%;
     }
 
+    div {
+      padding: 0.5rem;
+    }
     h4 {
       text-align: center;
       margin: 0;

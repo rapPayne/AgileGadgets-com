@@ -6,7 +6,11 @@ author: Rap Payne
 description: This is my first blog post using Astro's blog functionality.
 tags: [flutter, react, dart, javascript]
 time-to-read: 10 minutes
-mainImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_crop,ar_1:1/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
+url: /blog/first-post
+homePageImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/ar_16:9,w_300/q_auto/c_crop/v1731718067/cld-sample-5.webp
+listImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_fill,ar_1:1,w_200/q_auto/v1731718067/cld-sample-5.webp
+mainImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_crop,w_1000/q_auto/v1731718067/cld-sample-5.webp
+
 ---
 
 Welcome to my new blog! This is my first post using Astro's built-in blog capabilities.

@@ -5,15 +5,16 @@ interface Props {
 
 const { tag } = Astro.props;
 ---
-<a href={"/blog?tags="+tag}>{tag}</a>
+
+<a href={"/blog?tags=" + tag}>{tag}</a>
 <style>
-  a {
-    font-size: 0.8em;
-    background-color: light-dark(var(--dark3),var(--lite3));
-    color: light-dark(var(--lite1),var(--dark1));
+  a[href] {
+    font-size: 0.7em;
+    background-color: light-dark(var(--dark3), var(--lite3));
+    color: light-dark(var(--lite1), var(--dark1));
     padding: 1px 10px 1px 10px;
     margin: 0.5rem;
-    border-radius:1rem;
+    border-radius: 1rem;
     text-decoration: none;
   }
 </style>

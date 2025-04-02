@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import TagChip from "../../components/TagChip.astro";
 import { format } from "date-fns";
 
+//TODO: Need to read the "tags" querystring and filter.
 const posts = await Astro.glob("./*.md");
 const sortedPosts = posts.sort(
   (a, b) =>
@@ -17,30 +18,30 @@ const sortedPosts = posts.sort(
     <div class="postsList">
       {
         sortedPosts.map((post) => (
-          <article>
+          <div
+            class="article"
+            role="button"
+            onclick={`location.href='${post.url}'`}
+            tabindex="0"
+          >
             <img src={post.frontmatter.listImageUrl} alt="" />
-            <div>
-              <div class="date_and_author">
-                <time datetime={post.frontmatter.date}>
-                  {format(new Date(post.frontmatter.date), "MMMM d, yyyy")}
-                </time>
-                <span class="author">
-                  {post.frontmatter.author && (
-                    <span class="author">by {post.frontmatter.author}</span>
-                  )}
-                </span>
-              </div>
-              <h2>{post.frontmatter.title}</h2>
-              {post.frontmatter.description && (
-                <p class="description">{post.frontmatter.description}</p>
-              )}
-              <div class="tags">
-                {post.frontmatter.tags?.map((t: string) => (
-                  <TagChip tag={t} />
-                ))}
-              </div>
-            </div>
-          </article>
+
+            <time datetime={post.frontmatter.date}>
+              {format(new Date(post.frontmatter.date), "MMMM d, yyyy")}
+            </time>
+            <span class="author">
+              {post.frontmatter.author && `by ${post.frontmatter.author}`}
+            </span>
+            <h2 class="title">{post.frontmatter.title}</h2>
+            {post.frontmatter.description && (
+              <p class="description">{post.frontmatter.description}</p>
+            )}
+            <span class="tags">
+              {post.frontmatter.tags?.map((t: string) => (
+                <TagChip tag={t} />
+              ))}
+            </span>
+          </div>
         ))
       }
     </div>
@@ -51,11 +52,9 @@ const sortedPosts = posts.sort(
   main {
     margin: auto;
     padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
+    width: clamp(800px, 90vw, 90vw);
     color: light-dark(var(--dark1), var(--lite1));
     font-size: 20px;
-    line-height: 1.6;
   }
 
   h1 {
@@ -71,45 +70,43 @@ const sortedPosts = posts.sort(
     display: grid;
     gap: 2rem;
 
-    & article {
+    > .article {
       border: 1px solid light-dark(var(--dark1), var(--lite1));
-      display: flex;
       padding: 0;
+      display: grid;
+      grid-template-columns: 250px 1fr 1fr;
+      grid-template-areas:
+        "img date        author"
+        "img title       title"
+        "img description description"
+        "img tags        tags";
+
+      span.tags {
+        grid-area: tags;
+      }
 
       & img {
-        height: 100%;
-        margin-right: 10px;
+        grid-area: img;
       }
-      & div.date_and_author {
-        display: flex;
-        justify-content: space-between;
 
-        time {
-          font-size: 0.75rem;
-        }
-        span.author {
-          font-size: 0.75rem;
-        }
+      time {
+        grid-area: date;
+        font-size: 0.75rem;
       }
-      & p.description {
+      span.author {
+        grid-area: author;
+        font-size: 0.75rem;
+      }
+      h2.title {
+        grid-area: title;
+        margin: 0;
+      }
+
+      p.description {
+        grid-area: description;
         margin: 1rem 0 0;
         color: light-dark(var(--dark1), var(--lite1));
       }
     }
   }
-
-  /* .post-preview {
-    padding: 1.5rem;
-    border-radius: 8px;
-    background: linear-gradient(
-      rgba(light-dark(var(--lite2),var(--dark2)), 66%),
-      rgba(light-dark(var(--lite2), var(--dark2)), , 33%)
-    );
-    border: 1px solid rgba(light-dark(var(--dark3),var(--lite3)), 25%);
-
-    & h2 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-  } */
 </style>

@@ -6,8 +6,9 @@
 }
 
 :root {
-  font-family: RapPaynesHandwriting, sans-serif;
-  color-scheme:  light dark;
+  font-family: Menlo, Arial, sans-serif;
+  ;
+  color-scheme: light dark;
   color: light-dark(var(--dark1), var(--lite1));
   background-color: light-dark(var(--lite1), var(--dark1));
 
@@ -30,4 +31,8 @@ code {
     Bitstream Vera Sans Mono,
     Courier New,
     monospace;
+}
+
+.rapPaynesHandwriting {
+  font-family: RapPaynesHandwriting, sans-serif;
 }

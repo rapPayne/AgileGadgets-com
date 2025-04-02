@@ -1,23 +1,48 @@
 ---
+// The home/main/landing page for the site.
 export const prerender = false;
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import PostCard from "../components/PostCard.astro";
 
-const posts = await Astro.glob("./blog/*.md");
-const sortedPosts = posts
+// Use import.meta.glob to import the Markdown files
+const posts = import.meta.glob("./blog/*.md");
+
+// Convert the object returned by import.meta.glob into an array of promises
+const postPromises = Object.entries(posts).map(
+	async ([path, promiseResolver]) => {
+		const post = await promiseResolver(); // Resolve the import
+		return { ...post, path }; // Include the path if needed
+	},
+);
+
+// Wait for all promises to resolve
+const resolvedPosts = await Promise.all(postPromises);
+
+// Sort the posts by date
+const sortedPosts = resolvedPosts
 	.sort(
-		(a, b) =>
+		(a: Post, b: Post) =>
 			new Date(b.frontmatter.date).getTime() -
 			new Date(a.frontmatter.date).getTime(),
 	)
 	.slice(0, 3);
-console.log({ sortedPosts });
+
+// const posts = await Astro.glob("./blog/*.md");
+// const sortedPosts = posts
+// 	.toSorted(
+// 		(a, b) =>
+// 			new Date(b.frontmatter.date).getTime() -
+// 			new Date(a.frontmatter.date).getTime(),
+// 	)
+// 	.slice(0, 3);
 ---
 
 <Layout title="Rap">
 	<main>
-		<h1><img src="/images/AgileMan.jpg" alt="Logo" />Agile Gadgets</h1>
+		<h1 class="rapPaynesHandwriting">
+			<img src="/images/AgileMan.jpg" alt="Logo" />Agile Gadgets
+		</h1>
 		<h2>The blog and info site of Rap Payne</h2>
 		<p>Resources for developers, especially web and cross-platform mobile</p>
 		<section>
@@ -26,33 +51,7 @@ console.log({ sortedPosts });
 				{sortedPosts.map((post: any) => <PostCard post={post} />)}
 			</ul>
 		</section>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="./blog"
-				title="Blog"
-				body="Check out our latest blog posts and updates."
-			/>
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<ul role="list" class="link-card-grid"></ul>
 	</main>
 </Layout>
 
@@ -61,7 +60,6 @@ console.log({ sortedPosts });
 		margin: auto;
 		padding: 1rem;
 		font-size: 20px;
-		line-height: 1.6;
 
 		h1 {
 			font-size: 4rem;
@@ -85,27 +83,4 @@ console.log({ sortedPosts });
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 	}
-	/* .astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	} */
-	/* h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	} */
-
-	/* .link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	} */
 </style>

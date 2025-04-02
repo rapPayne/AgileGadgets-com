@@ -6,6 +6,7 @@ author: Rap Payne
 description: A better pattern of styling React components that combines the strengths of traditional CSS while staying encapsulated and local.
 tags: [react, css, javascript]
 time-to-read: 5 minutes
+url: /blog/component-classname-pattern
 homePageImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/ar_16:9,w_300/q_auto/c_crop/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
 listImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_fill,ar_1:1,w_200/q_auto/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
 mainImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_crop,w_1000/q_auto/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
