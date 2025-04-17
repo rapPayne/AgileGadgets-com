@@ -7,18 +7,34 @@
 
 :root {
   font-family: Menlo, Arial, sans-serif;
-  ;
   color-scheme: light dark;
   color: light-dark(var(--dark1), var(--lite1));
   background-color: light-dark(var(--lite1), var(--dark1));
 
-  /* CSS HEX */
-  --dark2: #be1526ff;
-  --dark1: #320a28ff;
-  --dark3: #28536bff;
-  --lite1: #fbfbfbff;
-  --lite2: #d8e4ffff;
-  --lite3: #eaf0fdff;
+  /* Site color palette */
+  --dark1: #320a28;
+  /* our black */
+  --dark2: #be1526;
+  /* our red */
+  --dark3: #28536b;
+  --dark4: #0A8754;
+  /* our green */
+  --dark5: #F1C40F;
+  /* our yellow */
+  --dark6: #003F91;
+  /* our blue */
+  --dark7: #8390FA;
+  /* our purple */
+  --lite1: #fbfbfb;
+  /* our white */
+  --lite2: #d8e4ff;
+  --lite3: #AFD2E9;
+  --lite4: #C9D5B5;
+  --success: #0A8754;
+  --danger: #be1526;
+  --info: #5BC3EB;
+  --success-lite: #E7EBC5;
+  --danger-lite: #DDC8C4;
 }
 
 code {
