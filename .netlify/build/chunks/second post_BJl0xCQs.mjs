@@ -1,6 +1,6 @@
 import { f as createComponent, i as renderComponent, r as renderTemplate, u as unescapeHTML } from './astro/server_wjSD972r.mjs';
 import 'kleur/colors';
-import { $ as $$BlogPost } from './BlogPost_DVJBDq1f.mjs';
+import { $ as $$BlogPost } from './BlogPost_Cq4-IL9x.mjs';
 
 const html = () => "<p>Welcome to my new blog! This is my second post using Astro’s built-in blog capabilities.</p>\n<h2 id=\"why-astro\">Why Astro?</h2>\n<p>Astro is an amazing static site generator that allows you to:</p>\n<ul>\n<li>Write content in Markdown</li>\n<li>Use your favorite frontend frameworks</li>\n<li>Ship zero JavaScript by default</li>\n<li>Deploy anywhere</li>\n</ul>\n<h2 id=\"whats-next\">What’s Next?</h2>\n<p>Stay tuned for more posts about web development, technology, and more!</p>";
 
@@ -8,7 +8,7 @@ const html = () => "<p>Welcome to my new blog! This is my second post using Astr
 				const file = "/Users/rap/Desktop/agile-gadgets/src/pages/blog/second post.md";
 				const url = "/blog/second post";
 				function rawContent() {
-					return "   \n                                    \n                          \n                \n                 \n                                                                          \n                        \n                      \n                                                                                                                           \n                                                                                                                      \n                                                                                                                \n\n   \n\nWelcome to my new blog! This is my second post using Astro's built-in blog capabilities.\n\n## Why Astro?\n\nAstro is an amazing static site generator that allows you to:\n\n- Write content in Markdown\n- Use your favorite frontend frameworks\n- Ship zero JavaScript by default\n- Deploy anywhere\n\n## What's Next?\n\nStay tuned for more posts about web development, technology, and more!";
+					return "   \n                                    \n                          \n                \n                 \n                                                                          \n                        \n                      \n                                                                                                                           \n                                                                                                                      \n                                                                                                                \n   \n\nWelcome to my new blog! This is my second post using Astro's built-in blog capabilities.\n\n## Why Astro?\n\nAstro is an amazing static site generator that allows you to:\n\n- Write content in Markdown\n- Use your favorite frontend frameworks\n- Ship zero JavaScript by default\n- Deploy anywhere\n\n## What's Next?\n\nStay tuned for more posts about web development, technology, and more!";
 				}
 				async function compiledContent() {
 					return await html();

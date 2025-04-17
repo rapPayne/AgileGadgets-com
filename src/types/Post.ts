@@ -11,6 +11,7 @@ type Frontmatter = {
   tags: Array<Tag>;
   timeToRead: number;  // Replace with library to estimate https://www.npmjs.com/package/reading-time
   url: string;
+  cloudinaryImageFileName: string;
   homePageImageUrl: string;
   listImageUrl: string;
   mainImageUrl: string;

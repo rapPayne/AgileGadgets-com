@@ -35,6 +35,16 @@
   --info: #5BC3EB;
   --success-lite: #E7EBC5;
   --danger-lite: #DDC8C4;
+
+  /* Max screen widths */
+  --width_max_phone: 767px;
+  /* Phones are 0 to 767 */
+  --width_max_tablet: 1023px;
+  /* Tablets are 768 to 1023 */
+  --width_max_laptop: 1439px;
+  /* Laptops are 1024 to 1439 */
+  --width_max_desktop: 1440px;
+  /* Desktops are 1440 or bigger */
 }
 
 code {

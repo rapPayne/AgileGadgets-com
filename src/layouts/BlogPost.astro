@@ -1,6 +1,7 @@
 ---
 import Layout from "./Layout.astro";
 import { format } from "date-fns";
+import { cloudinaryImageBaseUrl } from "../constants";
 
 const { frontmatter } = Astro.props;
 ---
@@ -8,17 +9,18 @@ const { frontmatter } = Astro.props;
 <Layout title={frontmatter.title}>
   <article class="blog-post">
     <header>
-      <img src={frontmatter.mainImageUrl} alt="" />
+      <img
+        src={frontmatter.mainImageUrl ??
+          `${cloudinaryImageBaseUrl}/c_fill,w_1000,ar_16:9/q_auto/${frontmatter.cloudinaryImageFileName}`}
+        alt=""
+      />
+
       <h1>{frontmatter.title}</h1>
       <div class="metadata">
         <time datetime={frontmatter.date}>
           {format(new Date(frontmatter.date), "MMMM d, yyyy")}
         </time>
-        {
-          frontmatter.author && (
-            <span class="author">by {frontmatter.author}</span>
-          )
-        }
+        {frontmatter.author && <span class="author">by {frontmatter.author}</span>}
       </div>
     </header>
     <div class="content">
@@ -29,39 +31,44 @@ const { frontmatter } = Astro.props;
 
 <style>
   .blog-post {
-    font-family: Menlo,Arial,sans-serif;;
+    font-family: Menlo, Arial, sans-serif;
     max-width: 65ch;
     margin: 0 auto;
     padding: 2rem;
-  }
 
-  header {
-    margin-bottom: 2rem;
-  }
+    header {
+      margin-bottom: 2rem;
 
+      img {
+        width: 100%;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .metadata {
+        color: light-dark(var(--dark1), var(--lite1));
+        font-size: 0.9rem;
+      }
 
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .metadata {
-    color: light-dark(var(--dark1), var(--lite1));
-    font-size: 0.9rem;
-  }
-
-  .author {
-    margin-left: 1rem;
-  }
-
-  .content {
-    color: light-dark(var(--dark1), var(--lite1));
-    line-height: 1.7;
-
-    h1,h2,h3,h4,h5,h6 {
-      color: light-dark(var(--dark2), var(--lite2));
+      .author {
+        margin-left: 0.25rem;
+      }
     }
 
+    .content {
+      color: light-dark(var(--dark1), var(--lite1));
+      line-height: 1.7;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: light-dark(var(--dark2), var(--lite2));
+      }
+    }
   }
 
   /* .content :global(h2) {

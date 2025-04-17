@@ -1,5 +1,6 @@
 ---
 import TagChip from "./TagChip.astro";
+import { cloudinaryImageBaseUrl } from "../constants";
 interface Props {
   post: {
     title: string;
@@ -11,12 +12,15 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, tags, homePageImageUrl, url } = post.frontmatter;
+const { title, description, tags, cloudinaryImageFileName, homePageImageUrl, url } = post.frontmatter;
 ---
 
 <li>
   <a href={url}>
-    <img src={homePageImageUrl} alt="" />
+    <img
+      src={homePageImageUrl ?? `${cloudinaryImageBaseUrl}/c_fill,w_300,ar_16:9,q_auto/${cloudinaryImageFileName}`}
+      alt=""
+    />
     <div>
       <h4>{title}</h4>
       <p>{description}</p>
@@ -27,6 +31,7 @@ const { title, description, tags, homePageImageUrl, url } = post.frontmatter;
 
 <style>
   li {
+    position: relative;
     list-style-type: none;
     max-width: 300px;
     border: 1px solid light-dark(var(--dark1), var(--lite1));
@@ -48,6 +53,21 @@ const { title, description, tags, homePageImageUrl, url } = post.frontmatter;
     h4 {
       text-align: center;
       margin: 0;
+    }
+  }
+  /* TODO: Should be variable-driven like so: @media (width < var(--width-max-phone)) { */
+  @media (width < 768px) {
+    li {
+      max-width: 100%;
+      background: none;
+
+      img {
+        position: absolute;
+        object-fit: cover;
+        filter: opacity(0.15);
+        z-index: -1;
+        height: 100%;
+      }
     }
   }
 </style>

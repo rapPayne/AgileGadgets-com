@@ -9,7 +9,6 @@ url: /blog/second-post
 homePageImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/ar_16:9,w_300/q_auto/c_crop/v1731718067/cld-sample.webp
 listImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_fill,ar_1:1,w_200/q_auto/v1731718067/cld-sample.webp
 mainImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_crop,w_1000/q_auto/v1731718067/cld-sample.webp
-
 ---
 
 Welcome to my new blog! This is my second post using Astro's built-in blog capabilities.

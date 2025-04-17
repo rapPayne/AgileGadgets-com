@@ -7,7 +7,7 @@ description: This is my first blog post using Astro's blog functionality.
 tags: [flutter, react, dart, javascript]
 time-to-read: 10 minutes
 url: /blog/first-post
-homePageImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/ar_16:9,w_300/q_auto/c_crop/v1731718067/cld-sample-5.webp
+cloudinaryImageFileName: cld-sample-5.webp
 listImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_fill,ar_1:1,w_200/q_auto/v1731718067/cld-sample-5.webp
 mainImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_crop,w_1000/q_auto/v1731718067/cld-sample-5.webp
 
