@@ -5,22 +5,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Courses">
   <main>
     <h1>Rap's favorite courses to teach</h1>
-    <section id="legend" aria-hidden="true">
-      <h2>Legend</h2>
-      <div class="for-flex-layout">
-        <div><i class="fa fa-book"></i><span>Course book is available</span></div>
-        <div><i class="fa fa-tools"></i><span>Hands-on lab guide</span></div>
-        <div>
-          <i class="fa fa-code"></i><span>Lab starters and solutions</span>
-        </div>
-        <div>
-          <i class="fa fa-check-circle"></i><span>Pre- and post-tests</span>
-        </div>
-        <div>
-          <i class="fa fa-calendar-alt"></i><span>Outline with schedule</span>
-        </div>
-      </div>
-    </section>
+
     <section>
       <h2>Front end web dev</h2>
       <div class="for-flex-layout">
@@ -209,9 +194,27 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
 
+    <section id="legend" aria-hidden="true">
+      <h2>Legend</h2>
+      <div class="for-flex-layout">
+        <div><i class="fa fa-book"></i><span>Course book is available</span></div>
+        <div><i class="fa fa-tools"></i><span>Hands-on lab guide</span></div>
+        <div>
+          <i class="fa fa-code"></i><span>Lab starters and solutions</span>
+        </div>
+        <div>
+          <i class="fa fa-check-circle"></i><span>Pre- and post-tests</span>
+        </div>
+        <div>
+          <i class="fa fa-calendar-alt"></i><span>Outline with schedule</span>
+        </div>
+      </div>
+    </section>
+
     <style>
       main {
-        display: block grid;
+        position: relative;
+        display: grid;
         place-items: center;
         /* align-content: center; */
 
@@ -235,7 +238,8 @@ import Layout from "../layouts/Layout.astro";
         }
 
         section#legend {
-          background-color: var(--lite2);
+          position: sticky;
+          bottom: 0;
           background-color: var(--lite1);
           border: 2px solid var(--dark1);
           border-radius: 10px;
