@@ -7,7 +7,7 @@ description: This is my third blog post using Astro's blog functionality.
 tags: [flutter, react, dart, javascript]
 time-to-read: 5 minutes
 cloudinaryImageFileName: v1744922976/three_edrape.jpg
-url: /blog/my-third-post
+url: /blog/my third post
 ---
 
 Welcome to my new blog! This is my first post using Astro's built-in blog capabilities.
