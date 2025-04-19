@@ -598,3 +598,7 @@ Want to learn more about Flutter forms?
 Check out the <a href="https://github.com/rapPayne/flutter-forms-validation/tree/master/starter" target="_blank" rel="noopener noreferrer">starter</a> and <a href="https://github.com/rapPayne/flutter-forms-validation/tree/master/final" target="_blank" rel="noopener noreferrer">completed</a> projects.
 
 And feel free to reach out to the <a href="https://linkedin.com/in/rapPayne" target="_blank" rel="noopener noreferrer">author</a>. I'd love to connect with you!
+
+<small>
+Originally published on <a href="https://medium.com/flutter-community/flutter-forms-validation-the-ultimate-guide-1b469169ca6e" target="_blank" rel="noopener noreferrer">Medium</a> on October 24, 2020.
+</small>
