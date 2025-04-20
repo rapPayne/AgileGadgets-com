@@ -1,14 +1,12 @@
-import { _ as __vite_glob_0_0 } from '../chunks/React-vs-Angular-vs-Vue-vs-Svelte_DLG6bT3R.mjs';
-import { _ as __vite_glob_0_1 } from '../chunks/component-classname-pattern_QbMjX9S-.mjs';
-import { _ as __vite_glob_0_2 } from '../chunks/first-post_CZXFEiL7.mjs';
-import { _ as __vite_glob_0_3 } from '../chunks/flutter-forms-validation_wLuo3dVc.mjs';
-import { _ as __vite_glob_0_4 } from '../chunks/second post_Bf4xgI8h.mjs';
+import { _ as __vite_glob_0_0 } from '../chunks/React-vs-Angular-vs-Vue-vs-Svelte_BVBaX7PM.mjs';
+import { _ as __vite_glob_0_1 } from '../chunks/component-classname-pattern_D--q635P.mjs';
+import { _ as __vite_glob_0_2 } from '../chunks/flutter-forms-validation_DN_8i5el.mjs';
 import rss from '@astrojs/rss';
 export { renderers } from '../renderers.mjs';
 
 async function GET(context) {
   // Glob all blog posts
-  const blogPosts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": __vite_glob_0_0,"./blog/component-classname-pattern.md": __vite_glob_0_1,"./blog/first-post.md": __vite_glob_0_2,"./blog/flutter-forms-validation.md": __vite_glob_0_3,"./blog/second post.md": __vite_glob_0_4});
+  const blogPosts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": __vite_glob_0_0,"./blog/component-classname-pattern.md": __vite_glob_0_1,"./blog/flutter-forms-validation.md": __vite_glob_0_2});
 
   // Map and transform the blog post data
   const items = Object.values(blogPosts).map((post) => ({
