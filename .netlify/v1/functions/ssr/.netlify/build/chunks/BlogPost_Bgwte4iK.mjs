@@ -1,9 +1,9 @@
 import { e as createAstro, f as createComponent, i as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute, k as renderSlot } from './astro/server_wjSD972r.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from './Layout_fM6Lr18Z.mjs';
+import { $ as $$Layout } from './Layout_BG8CsMl3.mjs';
 import { format } from 'date-fns';
 import { c as cloudinaryImageBaseUrl } from './constants_Rmf_rqex.mjs';
-/* empty css                                 */
+/* empty css                                                     */
 
 const $$Astro = createAstro("https://rapPayne.github.io");
 const $$BlogPost = createComponent(($$result, $$props, $$slots) => {

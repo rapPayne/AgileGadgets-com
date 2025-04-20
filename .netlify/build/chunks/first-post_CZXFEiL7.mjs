@@ -1,6 +1,6 @@
 import { f as createComponent, i as renderComponent, r as renderTemplate, u as unescapeHTML } from './astro/server_wjSD972r.mjs';
 import 'kleur/colors';
-import { $ as $$BlogPost } from './BlogPost_DlvQm2TY.mjs';
+import { $ as $$BlogPost } from './BlogPost_Bgwte4iK.mjs';
 
 const html = () => "<p>Welcome to my new blog! This is my first post using Astro’s built-in blog capabilities.</p>\n<h2 id=\"why-astro\">Why Astro?</h2>\n<p>Astro is an amazing static site generator that allows you to:</p>\n<ul>\n<li>Write content in Markdown</li>\n<li>Use your favorite frontend frameworks</li>\n<li>Ship zero JavaScript by default</li>\n<li>Deploy anywhere</li>\n</ul>\n<h2 id=\"whats-next\">What’s Next?</h2>\n<p>Stay tuned for more posts about web development, technology, and more!</p>";
 
@@ -36,7 +36,7 @@ const html = () => "<p>Welcome to my new blog! This is my first post using Astro
 							})}`;
 				});
 
-const __vite_glob_0_3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const __vite_glob_0_2 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
 	Content,
 	compiledContent,
@@ -48,4 +48,4 @@ const __vite_glob_0_3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.definePro
 	url
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { __vite_glob_0_3 as _ };
+export { __vite_glob_0_2 as _ };

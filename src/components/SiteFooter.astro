@@ -1,0 +1,126 @@
+---
+interface SocialItem {
+  icon: string;
+  label: string;
+  href: string;
+}
+
+const socialItems: SocialItem[] = [
+  { label: "Github", href: "https://github.com/rapPayne", icon: "fa-github" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/rapPayne", icon: "fa-linkedin" },
+  { label: "Reddit", href: "https://reddit.com/u/rapPayne", icon: "fa-reddit" },
+  { label: "X", href: "https://x.com/rapPayne", icon: "fa-x-twitter" },
+];
+
+// Get current path to highlight active link
+// const pathname = new URL(Astro.request.url).pathname;
+
+// Use import.meta.glob to import the Markdown files
+const posts = import.meta.glob("../pages/blog/*.md");
+
+// Convert the object returned by import.meta.glob into an array of promises
+const postPromises = Object.entries(posts).map(async ([_, promiseResolver]) => {
+  const post = await promiseResolver(); // Resolve the import
+  return post;
+});
+
+// Wait for all promises to resolve
+const resolvedPosts: Post[] = (await Promise.all(postPromises)) as Post[];
+// Sort the posts by date
+const sortedPosts = resolvedPosts
+  .toSorted((a: Post, b: Post) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+  .slice(0, 5);
+---
+
+<footer id="siteFooter">
+  <section id="latestBlogPosts">
+    <h1>Recent posts</h1>
+    <ol>
+      {
+        sortedPosts.map((post) => (
+          <li>
+            <a href={post.frontmatter.url}>{post.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+  <section id="socialLinks">
+    {
+      socialItems.map((item) => (
+        <a href={item.href}>
+          <i class={"fa " + item.icon} />
+        </a>
+      ))
+    }
+  </section>
+  <section id="copyright">
+    <p>Copyright &copy; {new Date().getFullYear()} Agile Gadgets, LLC. FAFO</p>
+  </section>
+</footer>
+<style>
+  footer {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: clamp(100px, 80cqw, 1000px) 1fr;
+    grid-template-areas:
+      "latestBlogPosts socialLinks"
+      "copyright copyright";
+    grid-template-rows: auto auto;
+
+    #socialLinks {
+      grid-area: socialLinks;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      a {
+        color: light-dark(var(--dark2), var(--lite1));
+        text-decoration: none;
+        font-size: 2rem;
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+      }
+    }
+
+    #latestBlogPosts {
+      grid-area: latestBlogPosts;
+      a {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+
+    #copyright {
+      text-align: center;
+      grid-area: copyright;
+    }
+  }
+  /* TODO: Should be variable-driven like so: @media (width < var(--width-max-phone)) { */
+  @media (width < 768px) {
+    footer {
+      grid-template-columns: 100%;
+      grid-template-areas:
+        "latestBlogPosts"
+        "socialLinks"
+        "copyright";
+      grid-template-rows: auto;
+
+      #latestBlogPosts {
+        a {
+          padding: 0.5em;
+        }
+      }
+
+      #socialLinks {
+        flex-direction: row;
+        a {
+          font-size: 3rem;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+</style>

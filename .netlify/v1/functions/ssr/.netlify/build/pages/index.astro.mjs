@@ -1,6 +1,6 @@
 import { e as createAstro, f as createComponent, m as maybeRenderHead, h as addAttribute, i as renderComponent, r as renderTemplate } from '../chunks/astro/server_wjSD972r.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_fM6Lr18Z.mjs';
+import { $ as $$Layout } from '../chunks/Layout_BG8CsMl3.mjs';
 import { $ as $$TagChip } from '../chunks/TagChip_BlV9xcqZ.mjs';
 import { c as cloudinaryImageBaseUrl } from '../chunks/constants_Rmf_rqex.mjs';
 /* empty css                                 */
@@ -20,8 +20,8 @@ const prerender = false;
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;
-  const posts = /* #__PURE__ */ Object.assign({"./blog/My third post.md": () => import('../chunks/My third post_YwK8Ywd1.mjs').then(n => n._),"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_C3zQN08m.mjs').then(n => n._),"./blog/component-classname-pattern.md": () => import('../chunks/component-classname-pattern_CDmGL8gY.mjs').then(n => n._),"./blog/first-post.md": () => import('../chunks/first-post_CI5ofSSP.mjs').then(n => n._),"./blog/flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_BkeEZwU6.mjs').then(n => n._),"./blog/second post.md": () => import('../chunks/second post_DDP1E4NA.mjs').then(n => n._)});
-  const postPromises = Object.entries(posts).map(async ([path, promiseResolver]) => {
+  const posts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_DLG6bT3R.mjs').then(n => n._),"./blog/component-classname-pattern.md": () => import('../chunks/component-classname-pattern_QbMjX9S-.mjs').then(n => n._),"./blog/first-post.md": () => import('../chunks/first-post_CZXFEiL7.mjs').then(n => n._),"./blog/flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_wLuo3dVc.mjs').then(n => n._),"./blog/second post.md": () => import('../chunks/second post_Bf4xgI8h.mjs').then(n => n._)});
+  const postPromises = Object.entries(posts).map(async ([, promiseResolver]) => {
     const post = await promiseResolver();
     return post;
   });

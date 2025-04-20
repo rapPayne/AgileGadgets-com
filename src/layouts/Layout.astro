@@ -3,6 +3,7 @@
 //TODO: List the last five posts in the footer.
 //TODO: Put a sitemap at the bottom of every page.
 import NavigationBar from "../components/NavigationBar.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 import "../styles/site.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "font-awesome/css/font-awesome.min.css";
@@ -26,6 +27,7 @@ const { title } = Astro.props;
 	<body>
 		<NavigationBar />
 		<slot />
+		<SiteFooter />
 	</body>
 </html>
 <style is:global>
