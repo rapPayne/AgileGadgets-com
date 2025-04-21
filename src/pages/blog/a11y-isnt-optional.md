@@ -32,9 +32,9 @@ When you take the time to make your web apps accessible, you’re not just follo
 
 So, how do we make this happen? Here are a few things you can do to start prioritizing accessibility in your projects:
 
-- **Lobby your bosses**: Show them this article or other better-written ones. Explain that accessibility isn’t just a nice-to-have; it’s a must-have. It’s not just about avoiding lawsuits; it’s about doing the right thing. The more we talk about it, the more it becomes a priority.
-- **Start Small**: You don’t have to overhaul your entire app overnight. Start with small changes, like using semantic HTML, adding alt text to images, and ensuring your color contrast is sufficient. Toss in a few ARIA attributes here and there. Every little bit helps.
-- **Educate Yourself** ... There are tons of resources: <a href="https://adrianroselli.com/" target="_blank" rel="noopener noreferrer">blogs, <a href="https://app.pluralsight.com/library/courses/accessibility-testing-and-screen-reader/table-of-contents" target="_blank" rel="noopener noreferrer">courses</a>, and even <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g" target="_blank" rel="noopener noreferrer">YouTube<a/> playlists dedicated to accessibility. Take some time to learn the different types of disabilities and how they affect web usage.
+- Lobby your bosses: Show them this article or other better-written ones. Explain that accessibility isn’t just a nice-to-have; it’s a must-have. It’s not just about avoiding lawsuits; it’s about doing the right thing. The more we talk about it, the more it becomes a priority.
+- Start Small: You don’t have to overhaul your entire app overnight. Start with small changes, like using semantic HTML, adding alt text to images, and ensuring your color contrast is sufficient. Toss in a few ARIA attributes here and there. Every little bit helps.
+- Educate Yourself ... There are tons of resources: <a href="https://adrianroselli.com/" target="_blank" rel="noopener noreferrer">blogs, <a href="https://app.pluralsight.com/library/courses/accessibility-testing-and-screen-reader/table-of-contents" target="_blank" rel="noopener noreferrer">courses</a>, and even <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g" target="_blank" rel="noopener noreferrer">YouTube</a> playlists dedicated to accessibility. Take some time to learn the different types of disabilities and how they affect web usage.
 
 ## Let’s change the story
 

@@ -48,7 +48,7 @@ const sortedPosts = resolvedPosts
   <section id="socialLinks">
     {
       socialItems.map((item) => (
-        <a href={item.href}>
+        <a href={item.href} aria-label={item.label}>
           <i class={"fa " + item.icon} />
         </a>
       ))
