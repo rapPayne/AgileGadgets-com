@@ -26,7 +26,7 @@ const $$SiteFooter = createComponent(async ($$result, $$props, $$slots) => {
     { label: "Reddit", href: "https://reddit.com/u/rapPayne", icon: "fa-reddit" },
     { label: "X", href: "https://x.com/rapPayne", icon: "fa-x-twitter" }
   ];
-  const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_BVBaX7PM.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_D--q635P.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_DN_8i5el.mjs').then(n => n._)});
+  const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_DZkymGWj.mjs').then(n => n._),"../pages/blog/a11y-isnt-optional.md": () => import('./a11y-isnt-optional_BREnF3gd.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_BjgJ39Vn.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_CNKjiFgd.mjs').then(n => n._)});
   const postPromises = Object.entries(posts).map(async ([_, promiseResolver]) => {
     const post = await promiseResolver();
     return post;

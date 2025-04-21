@@ -1,12 +1,13 @@
-import { _ as __vite_glob_0_0 } from '../chunks/React-vs-Angular-vs-Vue-vs-Svelte_BVBaX7PM.mjs';
-import { _ as __vite_glob_0_1 } from '../chunks/component-classname-pattern_D--q635P.mjs';
-import { _ as __vite_glob_0_2 } from '../chunks/flutter-forms-validation_DN_8i5el.mjs';
+import { _ as __vite_glob_0_0 } from '../chunks/React-vs-Angular-vs-Vue-vs-Svelte_DZkymGWj.mjs';
+import { _ as __vite_glob_0_1 } from '../chunks/a11y-isnt-optional_BREnF3gd.mjs';
+import { _ as __vite_glob_0_2 } from '../chunks/component-classname-pattern_BjgJ39Vn.mjs';
+import { _ as __vite_glob_0_3 } from '../chunks/flutter-forms-validation_CNKjiFgd.mjs';
 import rss from '@astrojs/rss';
 export { renderers } from '../renderers.mjs';
 
 async function GET(context) {
   // Glob all blog posts
-  const blogPosts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": __vite_glob_0_0,"./blog/component-classname-pattern.md": __vite_glob_0_1,"./blog/flutter-forms-validation.md": __vite_glob_0_2});
+  const blogPosts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": __vite_glob_0_0,"./blog/a11y-isnt-optional.md": __vite_glob_0_1,"./blog/component-classname-pattern.md": __vite_glob_0_2,"./blog/flutter-forms-validation.md": __vite_glob_0_3});
 
   // Map and transform the blog post data
   const items = Object.values(blogPosts).map((post) => ({
