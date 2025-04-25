@@ -28,34 +28,25 @@ const $$Astro$1 = createAstro("https://rapPayne.github.io");
 const $$SiteFooter = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$SiteFooter;
-  const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_yHTmWe75.mjs').then(n => n._),"../pages/blog/a11y-isnt-optional.md": () => import('./a11y-isnt-optional_C92oEzjY.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_CQGHmqjq.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_B37q_toN.mjs').then(n => n._),"../pages/blog/mermaid-diagrams.md": () => import('./mermaid-diagrams_CDqvld1c.mjs').then(n => n._)});
-  const postPromises = Object.entries(posts).map(async ([_, promiseResolver]) => {
-    const post = await promiseResolver();
-    return post;
-  });
-  const resolvedPosts = await Promise.all(postPromises);
-  resolvedPosts.toSorted((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()).slice(0, 5);
-  return renderTemplate`${maybeRenderHead()}<footer id="siteFooter" data-astro-cid-gcn2mc3v> <!-- <section id="latestBlogPosts">
-    <h1>Recent posts</h1>
-    <ol>
-      {
-        sortedPosts.map((post) => (
-          <li>
-            <a href={post.frontmatter.url}>{post.frontmatter.title}</a>
-          </li>
-        ))
-      }
-    </ol>
-  </section>
-  <section id="socialLinks">
-    {
-      socialItems.map((item) => (
-        <a href={item.href} aria-label={item.label}>
-          <i class={"fa " + item.icon} />
-        </a>
-      ))
-    }
-  </section> --> <section id="copyright" data-astro-cid-gcn2mc3v> <p data-astro-cid-gcn2mc3v>Copyright &copy; ${(/* @__PURE__ */ new Date()).getFullYear()} Agile Gadgets, LLC. FAFO</p> </section> </footer> `;
+  const socialItems = [
+    { label: "Github", href: "https://github.com/rapPayne", icon: "fa-github" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/rapPayne", icon: "fa-linkedin" },
+    { label: "Reddit", href: "https://reddit.com/u/rapPayne", icon: "fa-reddit" },
+    { label: "X", href: "https://x.com/rapPayne", icon: "fa-x-twitter" }
+  ];
+  let sortedPosts = [];
+  try {
+    const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_BzFgUpqg.mjs').then(n => n._),"../pages/blog/a11y-isnt-optional.md": () => import('./a11y-isnt-optional_DkMeTqab.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_D98-vGTG.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_BenQ0CGf.mjs').then(n => n._),"../pages/blog/mermaid-diagrams.md": () => import('./mermaid-diagrams_C8nKlQ4L.mjs').then(n => n._)});
+    const postPromises = Object.entries(posts).map(async ([_, promiseResolver]) => {
+      const post = await promiseResolver();
+      return post;
+    });
+    const resolvedPosts = await Promise.all(postPromises);
+    sortedPosts = resolvedPosts.toSorted((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()).slice(0, 5);
+  } catch (ex) {
+    console.error("Error getting posts", ex);
+  }
+  return renderTemplate`${maybeRenderHead()}<footer id="siteFooter" data-astro-cid-gcn2mc3v> <section id="latestBlogPosts" data-astro-cid-gcn2mc3v> <h1 data-astro-cid-gcn2mc3v>Recent posts</h1> <ol data-astro-cid-gcn2mc3v> ${sortedPosts.map((post) => renderTemplate`<li data-astro-cid-gcn2mc3v> <a${addAttribute(post.frontmatter.url, "href")} data-astro-cid-gcn2mc3v>${post.frontmatter.title}</a> </li>`)} </ol> </section> <section id="socialLinks" data-astro-cid-gcn2mc3v> ${socialItems.map((item) => renderTemplate`<a${addAttribute(item.href, "href")}${addAttribute(item.label, "aria-label")} data-astro-cid-gcn2mc3v> <i${addAttribute("fa " + item.icon, "class")} data-astro-cid-gcn2mc3v></i> </a>`)} </section> <section id="copyright" data-astro-cid-gcn2mc3v> <p data-astro-cid-gcn2mc3v>Copyright &copy; ${(/* @__PURE__ */ new Date()).getFullYear()} Agile Gadgets, LLC. FAFO</p> </section> </footer> `;
 }, "/Users/rap/Desktop/agile-gadgets/src/components/SiteFooter.astro", void 0);
 
 const $$Astro = createAstro("https://rapPayne.github.io");
