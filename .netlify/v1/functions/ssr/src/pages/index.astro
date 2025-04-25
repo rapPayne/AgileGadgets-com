@@ -1,0 +1,85 @@
+---
+// The home/main/landing page for the site.
+export const prerender = false;
+import Layout from "../layouts/Layout.astro";
+import PostCard from "../components/PostCard.astro";
+
+// Use import.meta.glob to import the Markdown files
+const posts = import.meta.glob("./blog/*.md");
+
+// Convert the object returned by import.meta.glob into an array of promises
+const postPromises = Object.entries(posts).map(async ([, promiseResolver]) => {
+	const post = await promiseResolver(); // Resolve the import
+	return post;
+});
+
+// Wait for all promises to resolve
+const resolvedPosts: Post[] = (await Promise.all(postPromises)) as Post[];
+
+// Sort the posts by date
+const sortedPosts = resolvedPosts
+	.sort((a: Post, b: Post) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+	.slice(0, 3);
+
+// const posts = await Astro.glob("./blog/*.md");
+// const sortedPosts = posts
+// 	.toSorted(
+// 		(a, b) =>
+// 			new Date(b.frontmatter.date).getTime() -
+// 			new Date(a.frontmatter.date).getTime(),
+// 	)
+// 	.slice(0, 3);
+---
+
+<Layout title="Rap">
+	<main>
+		<h1 class="rapPaynesHandwriting">
+			<img src="/images/AgileMan.jpg" alt="Logo" />Agile Gadgets
+		</h1>
+		<h2>The blog and info site of Rap Payne</h2>
+		<p>Resources for developers, especially web and cross-platform mobile</p>
+		<section>
+			<h3>Latest blog posts</h3>
+			<ul role="list" class="latest-blog-posts">
+				{sortedPosts.map((post: any) => <PostCard post={post} />)}
+			</ul>
+		</section>
+		<ul role="list" class="link-card-grid"></ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		font-size: 20px;
+
+		h1 {
+			font-size: 4rem;
+			font-weight: 700;
+			line-height: 1;
+			margin-bottom: 1em;
+
+			img {
+				height: 1em;
+				margin-right: 0.25em;
+			}
+		}
+		h1:has(~ h2),
+		h2 {
+			text-align: center;
+			margin: 0 auto 0 auto;
+		}
+
+		.latest-blog-posts {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+	/* TODO: Should be variable-driven like so: @media (width < var(--width-max-phone)) { */
+	@media (width < 768px) {
+		main .latest-blog-posts {
+			display: block;
+		}
+	}
+</style>
