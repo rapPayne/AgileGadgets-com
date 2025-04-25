@@ -28,18 +28,17 @@ const $$SiteFooter = createComponent(async ($$result, $$props, $$slots) => {
   ];
   let sortedPosts = [];
   try {
-    const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_5SMh0x6D.mjs').then(n => n._),"../pages/blog/a11y-isnt-optional.md": () => import('./a11y-isnt-optional_zBBlHXeX.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_DYPNAV5M.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_CnD-nn2p.mjs').then(n => n._),"../pages/blog/mermaid-diagrams.md": () => import('./mermaid-diagrams_DcvTaVqA.mjs').then(n => n._)});
+    const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_SULl_H6E.mjs').then(n => n._),"../pages/blog/a11y-isnt-optional.md": () => import('./a11y-isnt-optional_q16duRcA.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_2jxSDNfB.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_C-G0Qree.mjs').then(n => n._),"../pages/blog/mermaid-diagrams.md": () => import('./mermaid-diagrams_DlIET8uP.mjs').then(n => n._)});
     const postPromises = Object.entries(posts).map(async ([_, promiseResolver]) => {
       const post = await promiseResolver();
       return post;
     });
     const resolvedPosts = await Promise.all(postPromises);
     sortedPosts = resolvedPosts.slice().sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()).slice(0, 5);
-    throw "temp exception";
   } catch (ex) {
     console.error("Error getting posts:", ex);
   }
-  return renderTemplate`${maybeRenderHead()}<footer id="siteFooter" data-astro-cid-gcn2mc3v> <section id="latestBlogPosts" data-astro-cid-gcn2mc3v> <h1 data-astro-cid-gcn2mc3v>Recent posts</h1> <ol data-astro-cid-gcn2mc3v> ${sortedPosts.map((post) => renderTemplate`<li data-astro-cid-gcn2mc3v> <a${addAttribute(post.frontmatter.url, "href")} data-astro-cid-gcn2mc3v>${post.frontmatter.title}</a> </li>`)} </ol> </section> <section id="socialLinks" data-astro-cid-gcn2mc3v> ${socialItems.map((item) => renderTemplate`<a${addAttribute(item.href, "href")}${addAttribute(item.label, "aria-label")} data-astro-cid-gcn2mc3v> <i${addAttribute("fa " + item.icon, "class")} data-astro-cid-gcn2mc3v></i> </a>`)} </section> <section id="copyright" data-astro-cid-gcn2mc3v> <p data-astro-cid-gcn2mc3v>Copyright &copy; ${(/* @__PURE__ */ new Date()).getFullYear()} Agile Gadgets, LLC. FAFO</p> </section> </footer> `;
+  return renderTemplate`${maybeRenderHead()}<footer id="siteFooter" data-astro-cid-gcn2mc3v> <section id="latestBlogPosts" data-astro-cid-gcn2mc3v> <h1 data-astro-cid-gcn2mc3v>Recent posts</h1> <ol data-astro-cid-gcn2mc3v> ${sortedPosts.map((post) => renderTemplate`<li data-astro-cid-gcn2mc3v> <a${addAttribute(post.frontmatter.url, "href")} data-astro-cid-gcn2mc3v>${post.frontmatter.title}</a> </li>`)} </ol> </section> <section id="socialLinks" data-astro-cid-gcn2mc3v> ${socialItems.map((item) => renderTemplate`<a${addAttribute(item.href, "href")}${addAttribute(item.label, "aria-label")} target="_blank" rel="noreferrer noopener" data-astro-cid-gcn2mc3v> <i${addAttribute("fa " + item.icon, "class")} data-astro-cid-gcn2mc3v></i> </a>`)} </section> <section id="copyright" data-astro-cid-gcn2mc3v> <p data-astro-cid-gcn2mc3v>Copyright &copy; ${(/* @__PURE__ */ new Date()).getFullYear()} Agile Gadgets, LLC. FAFO</p> </section> </footer> `;
 }, "/Users/rap/Desktop/agile-gadgets/src/components/SiteFooter.astro", void 0);
 
 const $$Astro = createAstro("https://rapPayne.github.io");

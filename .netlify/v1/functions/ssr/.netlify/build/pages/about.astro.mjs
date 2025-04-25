@@ -1,6 +1,6 @@
 import { f as createComponent, i as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_wjSD972r.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_qcgDqIpd.mjs';
+import { $ as $$Layout } from '../chunks/Layout_R8DvhlOd.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
@@ -13,8 +13,11 @@ Founded a software development company to create apps for devices that can be ca
           Gadgets". Evidently I'm not the CEO type.
 </li> <li data-astro-cid-kh7btl4r>
 Wannabe athlete, 30 time marathoner, 10 bicycle centuries, and dozens of triathlons, including an <a href="" data-astro-cid-kh7btl4r>Ironman distance triathlon and </a><a href="https://www.instagram.com/p/C85o-hex_yv/" data-astro-cid-kh7btl4r>powerlifter</a>.
-</li><li data-astro-cid-kh7btl4r>Born in Taiwan, grew up in Europe, Hawaii and various places on the East Coast.</li> <li data-astro-cid-kh7btl4r>
-BS in Engineering from <a href="https://www.utexas.edu/" data-astro-cid-kh7btl4r>UT Austin 🤘</a> and an MBA in Finance from <a href="https://www.uta.edu/" data-astro-cid-kh7btl4r>UT Arlington</a>.
+</li><li data-astro-cid-kh7btl4r>
+Born in <a href="https://www.google.com/maps/place/Taipei+City,+Taiwan/" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r>Taiwan</a>, grew up in <a href="https://www.google.com/maps/place/54634+Bitburg,+Germany" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r>Europe</a>, <a href="https://www.google.com/maps/place/Honolulu,+HI" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r>Hawaii</a> and various <a href="https://www.google.com/maps/place/Hampton+Roads" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r>places</a> on the <a href="https://www.google.com/maps/place/Washington,+DC" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r>East</a> and <a href="https://www.google.com/maps/place/Biloxi,+MS" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r>Gulf</a> <a href="https://www.google.com/maps/place/Tampa,+FL" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r>Coasts</a>.
+</li> <li data-astro-cid-kh7btl4r>
+BS in Engineering from <a href="https://www.utexas.edu/" data-astro-cid-kh7btl4r>University of Texas 🤘</a> and an MBA in Finance from
+<a href="https://www.uta.edu/" data-astro-cid-kh7btl4r>UT Arlington</a>.
 </li> <li data-astro-cid-kh7btl4r>
 Currently live in <a href="https://www.google.com/maps/place/Garland,+TX" target="garland" data-astro-cid-kh7btl4r>Arlen, TX</a> in the
             Dallas/Fort Worth metroplex.
