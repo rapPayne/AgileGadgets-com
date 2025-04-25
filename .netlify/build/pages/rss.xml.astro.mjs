@@ -1,13 +1,14 @@
-import { _ as __vite_glob_0_0 } from '../chunks/React-vs-Angular-vs-Vue-vs-Svelte_B8MH3j8p.mjs';
-import { _ as __vite_glob_0_1 } from '../chunks/a11y-isnt-optional_BlDWaZ4j.mjs';
-import { _ as __vite_glob_0_2 } from '../chunks/component-classname-pattern_DgO0J73y.mjs';
-import { _ as __vite_glob_0_3 } from '../chunks/flutter-forms-validation_CbMRZSZB.mjs';
+import { _ as __vite_glob_0_0 } from '../chunks/React-vs-Angular-vs-Vue-vs-Svelte_6y9BfyCN.mjs';
+import { _ as __vite_glob_0_1 } from '../chunks/a11y-isnt-optional_D9LYDJrG.mjs';
+import { _ as __vite_glob_0_2 } from '../chunks/component-classname-pattern_c5zTPDWu.mjs';
+import { _ as __vite_glob_0_3 } from '../chunks/flutter-forms-validation_DbA_SjEJ.mjs';
+import { _ as __vite_glob_0_4 } from '../chunks/mermaid-diagrams_8i7oogPD.mjs';
 import rss from '@astrojs/rss';
 export { renderers } from '../renderers.mjs';
 
 async function GET(context) {
   // Glob all blog posts
-  const blogPosts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": __vite_glob_0_0,"./blog/a11y-isnt-optional.md": __vite_glob_0_1,"./blog/component-classname-pattern.md": __vite_glob_0_2,"./blog/flutter-forms-validation.md": __vite_glob_0_3});
+  const blogPosts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": __vite_glob_0_0,"./blog/a11y-isnt-optional.md": __vite_glob_0_1,"./blog/component-classname-pattern.md": __vite_glob_0_2,"./blog/flutter-forms-validation.md": __vite_glob_0_3,"./blog/mermaid-diagrams.md": __vite_glob_0_4});
 
   // Map and transform the blog post data
   const items = Object.values(blogPosts).map((post) => ({

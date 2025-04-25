@@ -1,5 +1,6 @@
 ---
 //TODO: Put a sitemap at the bottom of every page.
+import Card from "../components/Card.astro";
 import NavigationBar from "../components/NavigationBar.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import "../styles/site.css";
@@ -26,6 +27,7 @@ const { title } = Astro.props;
 		<NavigationBar />
 		<slot />
 		<SiteFooter />
+		<Card href="courses" title="Courses Rap Teaches" body="Click this card to find out" />
 	</body>
 </html>
 <style is:global>
