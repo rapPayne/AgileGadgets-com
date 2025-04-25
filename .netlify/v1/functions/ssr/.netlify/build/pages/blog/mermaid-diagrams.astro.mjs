@@ -1,4 +1,4 @@
-import { _ as __vite_glob_0_4 } from '../../chunks/mermaid-diagrams_C8nKlQ4L.mjs';
+import { _ as __vite_glob_0_4 } from '../../chunks/mermaid-diagrams_BbEYnqzs.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const page = () => __vite_glob_0_4;
