@@ -1,4 +1,4 @@
-import { _ as __vite_glob_0_1 } from '../../chunks/a11y-isnt-optional_GIyA3hbn.mjs';
+import { _ as __vite_glob_0_1 } from '../../chunks/a11y-isnt-optional_zBBlHXeX.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const page = () => __vite_glob_0_1;

@@ -1,6 +1,6 @@
 import { e as createAstro, f as createComponent, m as maybeRenderHead, h as addAttribute, i as renderComponent, r as renderTemplate } from '../chunks/astro/server_wjSD972r.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_BfZ9LkK7.mjs';
+import { $ as $$Layout } from '../chunks/Layout_qcgDqIpd.mjs';
 import { $ as $$TagChip } from '../chunks/TagChip_BlV9xcqZ.mjs';
 import { c as cloudinaryImageBaseUrl } from '../chunks/constants_Rmf_rqex.mjs';
 /* empty css                                 */
@@ -20,7 +20,7 @@ const prerender = false;
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;
-  const posts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_DV8m6CjV.mjs').then(n => n._),"./blog/a11y-isnt-optional.md": () => import('../chunks/a11y-isnt-optional_GIyA3hbn.mjs').then(n => n._),"./blog/component-classname-pattern.md": () => import('../chunks/component-classname-pattern_81BCOVqx.mjs').then(n => n._),"./blog/flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_CVuF7fCW.mjs').then(n => n._),"./blog/mermaid-diagrams.md": () => import('../chunks/mermaid-diagrams_uDax6D4L.mjs').then(n => n._)});
+  const posts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_5SMh0x6D.mjs').then(n => n._),"./blog/a11y-isnt-optional.md": () => import('../chunks/a11y-isnt-optional_zBBlHXeX.mjs').then(n => n._),"./blog/component-classname-pattern.md": () => import('../chunks/component-classname-pattern_DYPNAV5M.mjs').then(n => n._),"./blog/flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_CnD-nn2p.mjs').then(n => n._),"./blog/mermaid-diagrams.md": () => import('../chunks/mermaid-diagrams_DcvTaVqA.mjs').then(n => n._)});
   const postPromises = Object.entries(posts).map(async ([, promiseResolver]) => {
     const post = await promiseResolver();
     return post;
