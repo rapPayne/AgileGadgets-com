@@ -29,14 +29,17 @@ try {
 
   // Wait for all promises to resolve
   const resolvedPosts: Post[] = (await Promise.all(postPromises)) as Post[];
+
+  errorOutput = JSON.stringify(resolvedPosts, null, 2);
   // Sort the posts by date
   sortedPosts = resolvedPosts
     .toSorted((a: Post, b: Post) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
     .slice(0, 5);
+
   throw "temp exception";
 } catch (ex) {
-  errorOutput = "Error getting posts: " + JSON.stringify(ex, undefined, 2);
-  console.error("Error getting posts", ex);
+  errorOutput += "\nError getting posts: " + ex;
+  console.error("Error getting posts:", ex);
 }
 ---
 
