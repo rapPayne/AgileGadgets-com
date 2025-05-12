@@ -8,10 +8,10 @@ tags: [react, css, javascript]
 time-to-read: 5 minutes
 url: /blog/component-classname-pattern
 cloudinaryImageFileName: v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
-homePageImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/ar_16:9,w_300/q_auto/c_crop/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
-listImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_fill,ar_1:1,w_200/q_auto/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
-mainImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_crop,w_1000/q_auto/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
-XmainImageUrl: https://res.cloudinary.com/demo/image/upload/e_background_removal/e_trim/b_lightgray,c_lpad,w_1.1/r_20/docs/cupcake.png
+XhomePageImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/ar_16:9,w_300/q_auto/c_crop/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
+XlistImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_fill,ar_1:1,w_200/q_auto/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
+XmainImageUrl: https://res.cloudinary.com/dn7s3bbox/image/upload/c_crop,w_1000/q_auto/v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp
+XXmainImageUrl: https://res.cloudinary.com/demo/image/upload/e_background_removal/e_trim/b_lightgray,c_lpad,w_1.1/r_20/docs/cupcake.png
 ---
 
 # Stop writing React local styles! Use the "Component-Classname Pattern"
