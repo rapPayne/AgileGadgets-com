@@ -18,4 +18,17 @@ type Frontmatter = {
 }
 
 type Layout = '../../layouts/BlogPost.astro';  // So we can add new layouts later if we choose.
-type Tag = 'a11y' | 'css' | 'flutter' | 'html' | 'javascript' | 'react' | 'react native' | 'svelte' | 'vue'
+type Tag = 'a11y'
+  | 'API'
+  | 'data science'
+  | 'css'
+  | 'flutter'
+  | 'html'
+  | 'javascript'
+  | 'machine learning'
+  | 'python'
+  | 'react'
+  | 'react native'
+  | 'svelte'
+  | 'tutorial'
+  | 'vue'
