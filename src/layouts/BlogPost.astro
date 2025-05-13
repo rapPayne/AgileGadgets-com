@@ -17,8 +17,8 @@ const { frontmatter } = Astro.props;
 
       <h1>{frontmatter.title}</h1>
       <div class="metadata">
-        <time datetime={frontmatter.date}>
-          {format(new Date(frontmatter.date), "MMMM d, yyyy")}
+        <time datetime={frontmatter.pubDate}>
+          {format(new Date(frontmatter.pubDate), "MMMM d, yyyy")}
         </time>
         {frontmatter.author && <span class="author">by {frontmatter.author}</span>}
       </div>

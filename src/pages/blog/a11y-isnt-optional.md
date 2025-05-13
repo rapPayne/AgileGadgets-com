@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: "A11y: The Ethical Dilemma Every Dev Needs to Face"
-date: 2025-04-21
+pubDate: 2025-04-21
 author: Rap Payne
 description: "Accessibility is more than a legal requirement—it's an ethical decision that reflects our values as developers and as a society."
-tags: [a11y, css, html]
+categories: [a11y, css, html]
 time-to-read: 3 minutes
 url: /blog/a11y-isnt-optional
 cloudinaryImageFileName: v1745247710/a11y-isnt-optional_eiaarx.jpg

@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: Stop writing React local styles! Use the Component-Classname Pattern
-date: 2024-04-10
+pubDate: 2024-04-10
 author: Rap Payne
 description: A better pattern of styling React components that combines the strengths of traditional CSS while staying encapsulated and local.
-tags: [react, css, javascript]
+categories: [react, css, javascript]
 time-to-read: 5 minutes
 url: /blog/component-classname-pattern
 cloudinaryImageFileName: v1731718067/0_twitF9NUIVM80RPu_ovdea1.webp

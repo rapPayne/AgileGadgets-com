@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: Flutter Forms Validation - the Ultimate Guide
-date: 2020-10-24
+pubDate: 2020-10-24
 author: Rap Payne
 description: Form validation in Flutter is wierdly complicated. Let's create a fun li'l app that validates user input.
-tags: [flutter, dart]
+categories: [flutter, dart]
 time-to-read: 20 minutes
 url: /blog/flutter-forms-validation
 cloudinaryImageFileName: v1745004223/phone_app_nqaqec.jpg

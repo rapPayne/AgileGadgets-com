@@ -2,12 +2,12 @@
 layout: ../../layouts/BlogPost.astro
 title: "Hugging Face API Keys made Easy"
 description: "You need Hugging Face security tokens to use their models and they're not super easy to understand. We spill the tea in this post."
-date: 2025-05-12
+pubDate: 2025-05-12
 author: Rap Payne
 time-to-read: 5 minutes
 url: /blog/hugging-face-api-keys-made-easy
 cloudinaryImageFileName: v1747078803/HF_api_keys_fwijtk.png
-tags: ["machine learning", "data science", "API"]
+categories: ["machine learning", "data science", "API"]
 ---
 
 Hugging Face provides tons of Machine Learning tools but to use many of them you need an API key. Let's break down the process of getting and using those keys along with an explanation of the nuances of the different types of keys.

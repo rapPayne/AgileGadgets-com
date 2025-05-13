@@ -1,21 +1,13 @@
-import rss from '@astrojs/rss';
+import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 
 export async function GET(context) {
-  // Glob all blog posts
-  const blogPosts = import.meta.glob('./blog/*.md', { eager: true });
-
-  // Map and transform the blog post data
-  const items = Object.values(blogPosts).map((post) => ({
-    title: post.frontmatter.title,
-    pubDate: post.frontmatter.pubDate,
-    description: post.frontmatter.description,
-    link: `/blog/${post.frontmatter.slug || post.file.split('/').pop().replace('.md', '')}/`,
-  }));
-
+  const unsortedItems = await pagesGlobToRssItems(import.meta.glob('./**/*.md'));
+  const items = unsortedItems.toSorted((a, b) => b.pubDate - a.pubDate);
   return rss({
-    title: 'Agile Gadgets by Rap Payne',
-    description: `A blog site for Rap's writing, consulting, mentoring and training`,
+    title: "Agile Gadgets, Rap Payne's Blog",
+    description: "Rap Payne's blog about web tech and AI",
     site: context.site,
     items,
+    customData: `<language>en-us</language>`,
   });
 }
