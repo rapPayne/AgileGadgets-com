@@ -34,9 +34,11 @@ I know a thing or two about a thing or two and because I love to help people, I 
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://facebook.com/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-facebook" data-astro-cid-kh7btl4r></i> Facebook
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://tiktok.com/@rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-tiktok" data-astro-cid-kh7btl4r></i> TikTok
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://bsky.app/profile/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-bluesky" data-astro-cid-kh7btl4r></i> Bluesky
+</a> </li> <li data-astro-cid-kh7btl4r> <a href="https://mastodon.social/@rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-mastodon" data-astro-cid-kh7btl4r></i> Mastodon
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://youtube.com/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-youtube" data-astro-cid-kh7btl4r></i> YouTube
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://snapchat.com/add/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-snapchat" data-astro-cid-kh7btl4r></i> Snapchat
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://pinterest.com/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-pinterest" data-astro-cid-kh7btl4r></i> Pinterest
+</a> </li> <li data-astro-cid-kh7btl4r> <a href="https://www.strava.com/athletes/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-strava" data-astro-cid-kh7btl4r></i> Strava
 </a> </li> </ul> </section> </main>  ` })}`;
 }, "/Users/rap/Desktop/agile-gadgets/src/pages/about.astro", void 0);
 
