@@ -28,13 +28,13 @@ const $$SiteFooter = createComponent(async ($$result, $$props, $$slots) => {
   ];
   let sortedPosts = [];
   try {
-    const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_C8Fp1GqB.mjs').then(n => n._),"../pages/blog/a11y-isnt-optional.md": () => import('./a11y-isnt-optional_BWDw1cw5.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_CNSX1inx.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_Cxelk9uS.mjs').then(n => n._),"../pages/blog/hugging-face-api-keys-made-easy.md": () => import('./hugging-face-api-keys-made-easy_C77pN1_5.mjs').then(n => n._),"../pages/blog/hugging-face-spaces.md": () => import('./hugging-face-spaces_DnhJNTvy.mjs').then(n => n._),"../pages/blog/mermaid-diagrams.md": () => import('./mermaid-diagrams_Cls4145v.mjs').then(n => n._),"../pages/blog/react-hugging-face-inference-api.md": () => import('./react-hugging-face-inference-api_D2Ih6QJk.mjs').then(n => n._)});
+    const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_BS8Dk4YH.mjs').then(n => n._),"../pages/blog/a11y-isnt-optional.md": () => import('./a11y-isnt-optional_DxjYyfJN.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_BDdK_oIj.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_RFIxcmXB.mjs').then(n => n._),"../pages/blog/hugging-face-api-keys-made-easy.md": () => import('./hugging-face-api-keys-made-easy_BOYX-_Z8.mjs').then(n => n._),"../pages/blog/hugging-face-spaces.md": () => import('./hugging-face-spaces_BUu1zNjl.mjs').then(n => n._),"../pages/blog/mermaid-diagrams.md": () => import('./mermaid-diagrams_BaUvvNll.mjs').then(n => n._),"../pages/blog/react-hugging-face-inference-api.md": () => import('./react-hugging-face-inference-api_CsvSsR54.mjs').then(n => n._)});
     const postPromises = Object.entries(posts).map(async ([_, promiseResolver]) => {
       const post = await promiseResolver();
       return post;
     });
     const resolvedPosts = await Promise.all(postPromises);
-    sortedPosts = resolvedPosts.slice().sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()).slice(0, 5);
+    sortedPosts = resolvedPosts.slice().sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()).slice(0, 5);
   } catch (ex) {
     console.error("Error getting posts:", ex);
   }

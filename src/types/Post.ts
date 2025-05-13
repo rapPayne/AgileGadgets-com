@@ -3,7 +3,7 @@ type Post = {
 }
 
 type Frontmatter = {
-  date: string
+  pubDate: string
   layout: Layout;
   title: string;
   author: string;
