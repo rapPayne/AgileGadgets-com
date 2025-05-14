@@ -1,7 +1,7 @@
-import { e as createAstro, f as createComponent, m as maybeRenderHead, h as addAttribute, i as renderComponent, r as renderTemplate } from '../chunks/astro/server_BtSgW2PN.mjs';
+import { e as createAstro, f as createComponent, m as maybeRenderHead, h as addAttribute, i as renderComponent, r as renderTemplate } from '../chunks/astro/server_Bizk4uOg.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_DIlFYyhv.mjs';
-import { $ as $$TagChip } from '../chunks/TagChip_D8VQ9BZz.mjs';
+import { $ as $$Layout } from '../chunks/Layout_BHJXNZEb.mjs';
+import { $ as $$TagChip } from '../chunks/TagChip_TkaVwpUa.mjs';
 import { c as cloudinaryImageBaseUrl } from '../chunks/constants_LYb08bBk.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
@@ -20,7 +20,7 @@ const prerender = false;
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;
-  const posts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_BS8Dk4YH.mjs').then(n => n._),"./blog/a11y-isnt-optional.md": () => import('../chunks/a11y-isnt-optional_DxjYyfJN.mjs').then(n => n._),"./blog/component-classname-pattern.md": () => import('../chunks/component-classname-pattern_BDdK_oIj.mjs').then(n => n._),"./blog/flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_RFIxcmXB.mjs').then(n => n._),"./blog/hugging-face-api-keys-made-easy.md": () => import('../chunks/hugging-face-api-keys-made-easy_BOYX-_Z8.mjs').then(n => n._),"./blog/hugging-face-spaces.md": () => import('../chunks/hugging-face-spaces_BUu1zNjl.mjs').then(n => n._),"./blog/mermaid-diagrams.md": () => import('../chunks/mermaid-diagrams_BaUvvNll.mjs').then(n => n._),"./blog/react-hugging-face-inference-api.md": () => import('../chunks/react-hugging-face-inference-api_CsvSsR54.mjs').then(n => n._)});
+  const posts = /* #__PURE__ */ Object.assign({"./blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_BYQ_DLtZ.mjs').then(n => n._),"./blog/a11y-isnt-optional.md": () => import('../chunks/a11y-isnt-optional_DD0N0_qU.mjs').then(n => n._),"./blog/component-classname-pattern.md": () => import('../chunks/component-classname-pattern_CaqWyQEs.mjs').then(n => n._),"./blog/flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_mTZSS8xu.mjs').then(n => n._),"./blog/hugging-face-api-keys-made-easy.md": () => import('../chunks/hugging-face-api-keys-made-easy_D5VLdRyx.mjs').then(n => n._),"./blog/hugging-face-spaces.md": () => import('../chunks/hugging-face-spaces_CzG_-zlA.mjs').then(n => n._),"./blog/mermaid-diagrams.md": () => import('../chunks/mermaid-diagrams_DYWFRnNH.mjs').then(n => n._),"./blog/react-hugging-face-inference-api.md": () => import('../chunks/react-hugging-face-inference-api_DdORM6fd.mjs').then(n => n._)});
   const postPromises = Object.entries(posts).map(async ([, promiseResolver]) => {
     const post = await promiseResolver();
     return post;

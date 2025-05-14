@@ -1,0 +1,25 @@
+---
+// File: /Users/rap/Desktop/agile-gadgets/src/components/Metatags.astro
+
+interface Props {
+  image: string;
+  title: string;
+  url: string;
+  description: string;
+  site_name: string;
+}
+
+const { image, title, url, description, site_name } = Astro.props as Props;
+---
+
+<>
+  <meta property="og:title" content={title} />
+  <meta property="og:image" content={image} />
+  <meta property="og:url" content={url} />
+  <meta property="og:description" content={description} />
+  <meta property="og:site_name" content={site_name} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+</>

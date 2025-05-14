@@ -1,4 +1,4 @@
-import { e as createAstro, f as createComponent, m as maybeRenderHead, h as addAttribute, r as renderTemplate, o as renderHead, i as renderComponent, n as renderSlot } from './astro/server_BtSgW2PN.mjs';
+import { e as createAstro, f as createComponent, m as maybeRenderHead, h as addAttribute, r as renderTemplate, o as renderSlot, p as renderHead, i as renderComponent } from './astro/server_Bizk4uOg.mjs';
 import 'kleur/colors';
 import 'clsx';
 /* empty css                                                     */
@@ -28,7 +28,7 @@ const $$SiteFooter = createComponent(async ($$result, $$props, $$slots) => {
   ];
   let sortedPosts = [];
   try {
-    const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_BS8Dk4YH.mjs').then(n => n._),"../pages/blog/a11y-isnt-optional.md": () => import('./a11y-isnt-optional_DxjYyfJN.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_BDdK_oIj.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_RFIxcmXB.mjs').then(n => n._),"../pages/blog/hugging-face-api-keys-made-easy.md": () => import('./hugging-face-api-keys-made-easy_BOYX-_Z8.mjs').then(n => n._),"../pages/blog/hugging-face-spaces.md": () => import('./hugging-face-spaces_BUu1zNjl.mjs').then(n => n._),"../pages/blog/mermaid-diagrams.md": () => import('./mermaid-diagrams_BaUvvNll.mjs').then(n => n._),"../pages/blog/react-hugging-face-inference-api.md": () => import('./react-hugging-face-inference-api_CsvSsR54.mjs').then(n => n._)});
+    const posts = /* #__PURE__ */ Object.assign({"../pages/blog/React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('./React-vs-Angular-vs-Vue-vs-Svelte_BYQ_DLtZ.mjs').then(n => n._),"../pages/blog/a11y-isnt-optional.md": () => import('./a11y-isnt-optional_DD0N0_qU.mjs').then(n => n._),"../pages/blog/component-classname-pattern.md": () => import('./component-classname-pattern_CaqWyQEs.mjs').then(n => n._),"../pages/blog/flutter-forms-validation.md": () => import('./flutter-forms-validation_mTZSS8xu.mjs').then(n => n._),"../pages/blog/hugging-face-api-keys-made-easy.md": () => import('./hugging-face-api-keys-made-easy_D5VLdRyx.mjs').then(n => n._),"../pages/blog/hugging-face-spaces.md": () => import('./hugging-face-spaces_CzG_-zlA.mjs').then(n => n._),"../pages/blog/mermaid-diagrams.md": () => import('./mermaid-diagrams_DYWFRnNH.mjs').then(n => n._),"../pages/blog/react-hugging-face-inference-api.md": () => import('./react-hugging-face-inference-api_DdORM6fd.mjs').then(n => n._)});
     const postPromises = Object.entries(posts).map(async ([_, promiseResolver]) => {
       const post = await promiseResolver();
       return post;
@@ -46,7 +46,7 @@ const $$Layout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Layout;
   const { title } = Astro2.props;
-  return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="shortcut icon" href="/favicon.ico"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>${title}</title>${renderHead()}</head> <body> ${renderComponent($$result, "NavigationBar", $$NavigationBar, {})} ${renderSlot($$result, $$slots["default"])} ${renderComponent($$result, "SiteFooter", $$SiteFooter, {})} </body></html>`;
+  return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="shortcut icon" href="/favicon.ico"><meta name="generator"${addAttribute(Astro2.generator, "content")}>${renderSlot($$result, $$slots["metatags"])}<title>${title}</title>${renderHead()}</head> <body> ${renderComponent($$result, "NavigationBar", $$NavigationBar, {})} ${renderSlot($$result, $$slots["default"])} ${renderComponent($$result, "SiteFooter", $$SiteFooter, {})} </body></html>`;
 }, "/Users/rap/Desktop/agile-gadgets/src/layouts/Layout.astro", void 0);
 
 export { $$Layout as $ };

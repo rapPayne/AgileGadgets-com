@@ -1,19 +1,27 @@
 ---
 import Layout from "./Layout.astro";
+import Metatags from "../components/Metatags.astro";
 import { format } from "date-fns";
 import { cloudinaryImageBaseUrl } from "../constants";
 
 const { frontmatter } = Astro.props;
+const mainImgSrc =
+  frontmatter.mainImageUrl ??
+  `${cloudinaryImageBaseUrl}/c_fill,w_1000,ar_16:9/q_auto/${frontmatter.cloudinaryImageFileName}`;
 ---
 
 <Layout title={frontmatter.title}>
+  <Metatags
+    slot="metatags"
+    image={mainImgSrc}
+    description={frontmatter.description}
+    site_name="Agile Gadgets"
+    title={frontmatter.title}
+    url={"https://agilegadgets.com" + frontmatter.url}
+  />
   <article class="blog-post">
     <header>
-      <img
-        src={frontmatter.mainImageUrl ??
-          `${cloudinaryImageBaseUrl}/c_fill,w_1000,ar_16:9/q_auto/${frontmatter.cloudinaryImageFileName}`}
-        alt=""
-      />
+      <img src={mainImgSrc} alt="" />
 
       <h1>{frontmatter.title}</h1>
       <div class="metadata">

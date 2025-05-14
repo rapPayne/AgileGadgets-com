@@ -1,4 +1,4 @@
-import { _ as _page } from '../../chunks/hugging-face-api-keys-made-easy_BOYX-_Z8.mjs';
+import { _ as _page } from '../../chunks/hugging-face-api-keys-made-easy_D5VLdRyx.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const page = () => _page;

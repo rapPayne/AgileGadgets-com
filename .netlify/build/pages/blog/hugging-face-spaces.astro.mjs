@@ -1,4 +1,4 @@
-import { _ as _page } from '../../chunks/hugging-face-spaces_BUu1zNjl.mjs';
+import { _ as _page } from '../../chunks/hugging-face-spaces_CzG_-zlA.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const page = () => _page;
