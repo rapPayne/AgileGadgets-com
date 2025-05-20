@@ -76,6 +76,11 @@ const mainImgSrc =
       h6 {
         color: light-dark(var(--dark2), var(--lite2));
       }
+
+      img {
+        max-width: 100%; /* Ensures the image does not exceed the width of its container */
+        height: auto; /* Maintains the aspect ratio */
+      }
     }
   }
 

@@ -1,6 +1,6 @@
 import { e as createAstro, f as createComponent, i as renderComponent, n as Fragment, r as renderTemplate, h as addAttribute, m as maybeRenderHead, o as renderSlot } from './astro/server_Bizk4uOg.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from './Layout_h8iKztL5.mjs';
+import { $ as $$Layout } from './Layout_B3258PpT.mjs';
 import { format } from 'date-fns';
 import { c as cloudinaryImageBaseUrl } from './constants_LYb08bBk.mjs';
 /* empty css                                                     */

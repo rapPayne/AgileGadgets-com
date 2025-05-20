@@ -1,4 +1,4 @@
-import { _ as _page } from '../../chunks/React-vs-Angular-vs-Vue-vs-Svelte_CZPHmgBs.mjs';
+import { _ as _page } from '../../chunks/React-vs-Angular-vs-Vue-vs-Svelte_C8DlCGNI.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const page = () => _page;
