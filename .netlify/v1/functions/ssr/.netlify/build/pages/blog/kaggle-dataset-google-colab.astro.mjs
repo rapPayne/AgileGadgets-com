@@ -1,4 +1,4 @@
-import { _ as _page } from '../../chunks/hugging-face-api-keys-made-easy_TZxSfEI7.mjs';
+import { _ as _page } from '../../chunks/kaggle-dataset-google-colab_BmYp-O-4.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const page = () => _page;

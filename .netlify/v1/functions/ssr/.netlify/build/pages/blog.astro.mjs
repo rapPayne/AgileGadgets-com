@@ -1,6 +1,6 @@
 import { e as createAstro, f as createComponent, i as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute } from '../chunks/astro/server_Bizk4uOg.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_BHJXNZEb.mjs';
+import { $ as $$Layout } from '../chunks/Layout_DBQ-p4Vj.mjs';
 import { $ as $$TagChip } from '../chunks/TagChip_TkaVwpUa.mjs';
 import { format } from 'date-fns';
 import { c as cloudinaryImageBaseUrl } from '../chunks/constants_LYb08bBk.mjs';
@@ -11,7 +11,7 @@ const $$Astro = createAstro("https://agilegadgets.com");
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;
-  const posts = await Astro2.glob(/* #__PURE__ */ Object.assign({"./React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_BYQ_DLtZ.mjs').then(n => n._),"./a11y-isnt-optional.md": () => import('../chunks/a11y-isnt-optional_DD0N0_qU.mjs').then(n => n._),"./component-classname-pattern.md": () => import('../chunks/component-classname-pattern_CaqWyQEs.mjs').then(n => n._),"./flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_mTZSS8xu.mjs').then(n => n._),"./hugging-face-api-keys-made-easy.md": () => import('../chunks/hugging-face-api-keys-made-easy_D5VLdRyx.mjs').then(n => n._),"./hugging-face-spaces.md": () => import('../chunks/hugging-face-spaces_CzG_-zlA.mjs').then(n => n._),"./mermaid-diagrams.md": () => import('../chunks/mermaid-diagrams_DYWFRnNH.mjs').then(n => n._),"./react-hugging-face-inference-api.md": () => import('../chunks/react-hugging-face-inference-api_DdORM6fd.mjs').then(n => n._)}), () => "./*.md");
+  const posts = await Astro2.glob(/* #__PURE__ */ Object.assign({"./React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_D-qgAB0S.mjs').then(n => n._),"./a11y-isnt-optional.md": () => import('../chunks/a11y-isnt-optional_BQzX3EYn.mjs').then(n => n._),"./component-classname-pattern.md": () => import('../chunks/component-classname-pattern_BfMB7jCD.mjs').then(n => n._),"./flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_DemKPMs6.mjs').then(n => n._),"./hugging-face-api-keys-made-easy.md": () => import('../chunks/hugging-face-api-keys-made-easy_TZxSfEI7.mjs').then(n => n._),"./hugging-face-spaces.md": () => import('../chunks/hugging-face-spaces_Ds4PNTP5.mjs').then(n => n._),"./kaggle-dataset-google-colab.md": () => import('../chunks/kaggle-dataset-google-colab_BmYp-O-4.mjs').then(n => n._),"./mermaid-diagrams.md": () => import('../chunks/mermaid-diagrams_BauBKyx_.mjs').then(n => n._),"./react-hugging-face-inference-api.md": () => import('../chunks/react-hugging-face-inference-api_CZ_z9KYk.mjs').then(n => n._)}), () => "./*.md");
   const sortedPosts = posts.sort(
     (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
   );
