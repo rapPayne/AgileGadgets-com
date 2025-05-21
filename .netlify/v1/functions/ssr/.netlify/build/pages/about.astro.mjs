@@ -1,6 +1,6 @@
 import { f as createComponent, i as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_Bizk4uOg.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_B3258PpT.mjs';
+import { $ as $$Layout } from '../chunks/Layout_DDTTJOMY.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
@@ -38,6 +38,7 @@ I know a thing or two about a thing or two and because I love to help people, I 
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://youtube.com/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-youtube" data-astro-cid-kh7btl4r></i> YouTube
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://snapchat.com/add/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-snapchat" data-astro-cid-kh7btl4r></i> Snapchat
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://pinterest.com/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-pinterest" data-astro-cid-kh7btl4r></i> Pinterest
+</a> </li> <li data-astro-cid-kh7btl4r> <a href="https://open.spotify.com/user/rappayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-spotify" data-astro-cid-kh7btl4r></i> Spotify
 </a> </li> <li data-astro-cid-kh7btl4r> <a href="https://www.strava.com/athletes/rapPayne" target="_blank" rel="noopener noreferrer" data-astro-cid-kh7btl4r> <i class="fa-brands fa-strava" data-astro-cid-kh7btl4r></i> Strava
 </a> </li> </ul> </section> </main>  ` })}`;
 }, "/Users/rap/Desktop/agile-gadgets/src/pages/about.astro", void 0);
