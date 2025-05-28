@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPost.astro
 title: "Using a Kaggle Dataset to Train a ML Model in Google Colab"
 description: "Learn how to train a machine learning model in Google Colab using a dataset from Kaggle. This step-by-step tutorial will guide you through dataset selection, training, evaluation, and saving your model for future use."
-pubDate: 2025-05-22
+pubDate: 2025-05-28
 author: Rap Payne
 time-to-read: 15 minutes
 url: /blog/kaggle-dataset-google-colab
