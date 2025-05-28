@@ -122,7 +122,7 @@ This dataset had 173,000 duplicates. So we dropped them, leaving us about 395,00
 Remember from above that the dataset is biased towards 5 stars? 
 ![There are more 5-star reviews than all other ratings combined](https://res.cloudinary.com/rappayne/image/upload/v1747419464/kaggle_score_dist_udwbmh.png)
 
-If our intent were to predict an overall star rating keeping in mind the entire dataset, we would want to keep the balance and our predictions would be centered around 4.2 stars. But we want to predict the star rating based on the review text, ignoring all other reviews. We need to balance the dataset to have an equal number of each star rating, 1 through 5. This is called a "stratified sample". 
+If our intent were to predict an overall star rating keeping in mind the entire dataset, we would want to keep the balance and our predictions would be centered around 4.2 stars. But we want to predict the star rating <u>based on the review text</u> only, ignoring all other ratings. We need to balance the dataset to have an equal number of each star rating, 1 through 5. This is called a "stratified sample". 
 
 The rating with the fewest occurrences is 2 stars. There were 20,845 of them. So I decided to randomly sample 20,845 reviews from each of the Score groups.
 
@@ -140,7 +140,7 @@ The human-entered Summary and Text is messy. Let's clean them up with <a href="h
 > **Tip:** You can also use <a href="https://spacy.io/" target="_blank" rel="noopener noreferrer">spaCy</a> for this.
 ---
 
-1. Convert all text to lowercase so that "Best", "best" and "BEST" are treated the same.
+1. Convert all text to lowercase so that "Best", "best" and "BEST" are treated as the same word.
 
 ```python
 stratified_sample['Summary'] = stratified_sample['Summary'].str.lower()
@@ -225,6 +225,7 @@ We broke them into "words" so each word could be processed. All the words are no
 stratified_sample['Summary'] = stratified_sample['Summary'].apply(lambda tokens: ' '.join(tokens))
 stratified_sample['Text'] = stratified_sample['Text'].apply(lambda tokens: ' '.join(tokens))
 ```
+We now have sentence again, but sentences that sound like <a href="https://www.youtube.com/watch?v=_K-L9uhsBLM" target="_blank" rel="noopener noreferrer">Kevin from The Office</a>. Instead of "I love this extremely good product!", we have "love extreme good product". 
 
 ## Step 6: Split the Data into Training and Testing Sets
 
@@ -294,7 +295,7 @@ y_pred = model.predict(X_test_combined)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Model Accuracy: {accuracy:.2f}")
 ```
-The accuracy score will be between 0 and 1. A score of 0.8 means that the model correctly predicted the star rating 80% of the time. Ours was a dismal 0.51. 😦 This may have been because a close guess is still seen as 100% wrong (unlike in a regression model). So if we predicted a 2-star review but it was 1 or if we predicted a 4-star review and it was 5, those would still be completely wrong. In classification, there's no such thing as close. Let's try with some hand-written reviews.
+The accuracy score will be between 0 and 1. A score of 0.8 means that the model correctly predicted the star rating 80% of the time. Ours was a dismal 0.51. 😦 This may have been because a close guess is still seen as 100% wrong (unlike in a regression model). So if we predicted a 2-star review but it was 1 or if we predicted a 4-star review and it was 5, those would still be considered completely wrong. In classification, there's no such thing as close. Let's try with some hand-written reviews.
 
 ## Step 10: Perform a Sanity Check
 
