@@ -1,4 +1,4 @@
-import { _ as _page } from '../../chunks/react-hugging-face-inference-api_DGwr40fa.mjs';
+import { _ as _page } from '../../chunks/react-hugging-face-inference-api_DJsuJQCm.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const page = () => _page;

@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ImageDialog from "../components/ImageDialog.astro";
 ---
 
 <Layout title="About Rap">
   <main>
     <h1>I'm Rap Payne 👋</h1>
+
     <section id="just_the_facts">
       <ul>
         <li>An independent consultant. I've been unemployed for over 20 years. 😉</li>
@@ -19,49 +21,55 @@ import Layout from "../layouts/Layout.astro";
           Gadgets". Evidently I'm not the CEO type.
         </li>
         <li>
-          Wannabe athlete, 30 time marathoner, 10 bicycle centuries, and dozens of triathlons, including an <a href=""
-            >Ironman distance triathlon and <a href="https://www.instagram.com/p/C85o-hex_yv/">powerlifter</a>.</a
+          Wannabe athlete, 30 time marathoner, 10 bicycle centuries, and dozens of triathlons, including an <button
+            id="ironmanButton"
+            class="looks_like_a_link">Ironman distance triathlon</button
+          > and <a href="https://www.instagram.com/p/C85o-hex_yv/" target="_blank" rel="noopener noreferrer"
+            >powerlifter</a
+          >.
+        </li>
+        <li>
+          Born in <a
+            href="https://www.google.com/maps/place/Taipei+City,+Taiwan/"
+            target="_blank"
+            rel="noopener noreferrer">Taiwan</a
+          >, grew up in <a
+            href="https://www.google.com/maps/place/54634+Bitburg,+Germany"
+            target="_blank"
+            rel="noopener noreferrer">Europe</a
+          >, <a href="https://www.google.com/maps/place/Honolulu,+HI" target="_blank" rel="noopener noreferrer"
+            >Hawaii</a
+          > and various <a
+            href="https://www.google.com/maps/place/Hampton+Roads"
+            target="_blank"
+            rel="noopener noreferrer">places</a
+          > on the <a href="https://www.google.com/maps/place/Washington,+DC" target="_blank" rel="noopener noreferrer"
+            >East</a
+          > and <a href="https://www.google.com/maps/place/Biloxi,+MS" target="_blank" rel="noopener noreferrer">Gulf</a
           >
-          <li>
-            Born in <a
-              href="https://www.google.com/maps/place/Taipei+City,+Taiwan/"
-              target="_blank"
-              rel="noopener noreferrer">Taiwan</a
-            >, grew up in <a
-              href="https://www.google.com/maps/place/54634+Bitburg,+Germany"
-              target="_blank"
-              rel="noopener noreferrer">Europe</a
-            >, <a href="https://www.google.com/maps/place/Honolulu,+HI" target="_blank" rel="noopener noreferrer"
-              >Hawaii</a
-            > and various <a
-              href="https://www.google.com/maps/place/Hampton+Roads"
-              target="_blank"
-              rel="noopener noreferrer">places</a
-            > on the <a
-              href="https://www.google.com/maps/place/Washington,+DC"
-              target="_blank"
-              rel="noopener noreferrer">East</a
-            > and <a href="https://www.google.com/maps/place/Biloxi,+MS" target="_blank" rel="noopener noreferrer"
-              >Gulf</a
-            >
-            <a href="https://www.google.com/maps/place/Tampa,+FL" target="_blank" rel="noopener noreferrer">Coasts</a>.
-          </li>
-          <li>
-            BS in Engineering from <a href="https://www.utexas.edu/">University of Texas 🤘</a> and an MBA in Finance from
-            <a href="https://www.uta.edu/">UT Arlington</a>.
-          </li>
-          <li>
-            Currently live in <a href="https://www.google.com/maps/place/Garland,+TX" target="garland">Arlen, TX</a> in the
-            Dallas/Fort Worth metroplex.
-          </li>
-          <li>
-            Drive a 25-year old Jeep Wrangler and an all-electric <a href="https://rivian.com/r1s">Rivian R1S</a>.
-          </li>
-          <li>Father of five successful home- and college-educated kids. (Ask me how we did it.)</li>
-          <li>
-            I know a thing or two about a thing or two and because I love to help people, I figured I'd create this
-            blog. Enjoy!
-          </li>
+          <a href="https://www.google.com/maps/place/Tampa,+FL" target="_blank" rel="noopener noreferrer">Coasts</a>.
+        </li>
+        <li>
+          BS in Engineering from <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer"
+            >University of Texas 🤘</a
+          > and an MBA in Finance from
+          <a href="https://www.uta.edu/" target="_blank" rel="noopener noreferrer">UT Arlington</a>.
+        </li>
+        <li>
+          Currently live in <a
+            href="https://www.google.com/maps/place/Garland,+TX"
+            target="_blank"
+            rel="noopener noreferrer">Arlen, TX</a
+          > in the Dallas/Fort Worth metroplex.
+        </li>
+        <li>
+          Drive a 25-year old <button id="jeepButton" class="looks_like_a_link">Jeep Wrangler</button> and an all-electric
+          <a href="https://rivian.com/r1s" target="_blank" rel="noopener noreferrer">Rivian R1S</a>.
+        </li>
+        <li>Father of five successful home- and college-educated kids. (Ask me how we did it.)</li>
+        <li>
+          I know a thing or two about a thing or two and because I love to help people, I figured I'd create this blog.
+          Enjoy!
         </li>
       </ul>
     </section>
@@ -201,72 +209,91 @@ import Layout from "../layouts/Layout.astro";
         </li>
       </ul>
     </section>
+    <ImageDialog
+      id="jeepDialog"
+      imageURL="https://res.cloudinary.com/rappayne/image/upload/v1745015737/sticky_bear_jeep_ivhdd1.jpg"
+      description="Rap drives an old Jeep and has a big old dog"
+    />
+    <ImageDialog
+      id="ironmanDialog"
+      imageURL="https://res.cloudinary.com/rappayne/image/upload/v1745015734/Leg_tattoo_hllcxh.jpg"
+      description="Rap got an Ironman tattoo after the race. It has the Texas flag in the background"
+    />
   </main>
+</Layout>
 
-  <style>
-    main {
-      display: grid;
-      place-items: center;
-      /* align-content: center; */
+<style>
+  main {
+    display: grid;
+    place-items: center;
+    /* align-content: center; */
 
-      section {
-        margin-bottom: 30px;
-      }
+    section {
+      margin-bottom: 30px;
+    }
 
-      #specialties {
-        div {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
+    #specialties {
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
 
-          section {
-            flex: 0 1 200px;
-            background-color: var(--lite2);
-            border: 2px solid var(--dark1);
-            border-radius: 10px;
-            padding: 10px;
+        section {
+          flex: 0 1 200px;
+          background-color: var(--lite2);
+          border: 2px solid var(--dark1);
+          border-radius: 10px;
+          padding: 10px;
 
-            h3 {
-              text-align: center;
-            }
-            li {
-              list-style-type: none;
-            }
+          h3 {
+            text-align: center;
+          }
+          li {
+            list-style-type: none;
           }
         }
       }
-      #social_links {
-        width: clamp(300px, 80vw, 1000px);
-        .highlight {
-          color: var(--dark2);
-        }
-        & ul {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          padding: 0;
-          gap: 3em;
-          & li {
-            list-style-type: none;
-            flex: 0 1 100px;
-            background-color: var(--lite2);
-            border: 2px solid var(--dark1);
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            & a {
-              color: var(--dark1);
-              text-decoration: none;
+    }
+    #social_links {
+      width: clamp(300px, 80vw, 1000px);
+      .highlight {
+        color: var(--dark2);
+      }
+      & ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0;
+        gap: 3em;
+        & li {
+          list-style-type: none;
+          flex: 0 1 100px;
+          background-color: var(--lite2);
+          border: 2px solid var(--dark1);
+          border-radius: 10px;
+          padding: 10px;
+          text-align: center;
+          & a {
+            color: var(--dark1);
+            text-decoration: none;
 
-              & i {
-                font-size: 3em;
-                display: block;
-              }
+            & i {
+              font-size: 3em;
+              display: block;
             }
           }
         }
       }
     }
-  </style>
-</Layout>
+  }
+</style>
+
+<script>
+  document.querySelector("#jeepButton")?.addEventListener("click", () => {
+    (document.querySelector("#jeepDialog") as HTMLDialogElement)?.showModal();
+  });
+  document.querySelector("#ironmanButton")?.addEventListener("click", () => {
+    (document.querySelector("#ironmanDialog") as HTMLDialogElement)?.showModal();
+  });
+</script>

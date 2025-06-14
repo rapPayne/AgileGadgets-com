@@ -1,4 +1,4 @@
-import { _ as _page } from '../../chunks/a11y-isnt-optional_BFYy7Ity.mjs';
+import { _ as _page } from '../../chunks/a11y-isnt-optional_BDEuiDcR.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const page = () => _page;

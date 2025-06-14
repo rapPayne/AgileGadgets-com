@@ -1,7 +1,7 @@
-import { e as createAstro, f as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute } from '../chunks/astro/server_D72iM745.mjs';
+import { e as createAstro, f as createComponent, l as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute } from '../chunks/astro/server_BAVukojE.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_BowpEgmD.mjs';
-import { $ as $$TagChip } from '../chunks/TagChip_DT6c4UFU.mjs';
+import { $ as $$Layout } from '../chunks/Layout_DIEJa51Z.mjs';
+import { $ as $$TagChip } from '../chunks/TagChip_Ck6RfHUK.mjs';
 import { format } from 'date-fns';
 import { c as cloudinaryImageBaseUrl } from '../chunks/constants_LYb08bBk.mjs';
 /* empty css                                 */
@@ -11,7 +11,7 @@ const $$Astro = createAstro("https://agilegadgets.com");
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;
-  const posts = await Astro2.glob(/* #__PURE__ */ Object.assign({"./React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_BkVxJA_g.mjs').then(n => n._),"./a11y-isnt-optional.md": () => import('../chunks/a11y-isnt-optional_BFYy7Ity.mjs').then(n => n._),"./component-classname-pattern.md": () => import('../chunks/component-classname-pattern_Du0MAy8U.mjs').then(n => n._),"./flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_C8vhaFPR.mjs').then(n => n._),"./hugging-face-api-keys-made-easy.md": () => import('../chunks/hugging-face-api-keys-made-easy_17UP-5BK.mjs').then(n => n._),"./hugging-face-spaces.md": () => import('../chunks/hugging-face-spaces_DGZ_8tTK.mjs').then(n => n._),"./kaggle-dataset-google-colab.md": () => import('../chunks/kaggle-dataset-google-colab_CboAkq_R.mjs').then(n => n._),"./mermaid-diagrams.md": () => import('../chunks/mermaid-diagrams_DF0HyDMZ.mjs').then(n => n._),"./react-hugging-face-inference-api.md": () => import('../chunks/react-hugging-face-inference-api_DGwr40fa.mjs').then(n => n._),"./typescript-types-vs-interfaces.md": () => import('../chunks/typescript-types-vs-interfaces_DIESkQUV.mjs').then(n => n._)}), () => "./*.md");
+  const posts = await Astro2.glob(/* #__PURE__ */ Object.assign({"./React-vs-Angular-vs-Vue-vs-Svelte.md": () => import('../chunks/React-vs-Angular-vs-Vue-vs-Svelte_BlzxkRxi.mjs').then(n => n._),"./a11y-isnt-optional.md": () => import('../chunks/a11y-isnt-optional_BDEuiDcR.mjs').then(n => n._),"./component-classname-pattern.md": () => import('../chunks/component-classname-pattern_DPIf45xK.mjs').then(n => n._),"./flutter-forms-validation.md": () => import('../chunks/flutter-forms-validation_Bd3iKLxW.mjs').then(n => n._),"./hugging-face-api-keys-made-easy.md": () => import('../chunks/hugging-face-api-keys-made-easy_Ct9f039a.mjs').then(n => n._),"./hugging-face-spaces.md": () => import('../chunks/hugging-face-spaces_BMnD0Ntt.mjs').then(n => n._),"./kaggle-dataset-google-colab.md": () => import('../chunks/kaggle-dataset-google-colab_AI96lMF-.mjs').then(n => n._),"./mermaid-diagrams.md": () => import('../chunks/mermaid-diagrams_DngY9HLp.mjs').then(n => n._),"./react-hugging-face-inference-api.md": () => import('../chunks/react-hugging-face-inference-api_DJsuJQCm.mjs').then(n => n._),"./typescript-types-vs-interfaces.md": () => import('../chunks/typescript-types-vs-interfaces_CCfXqUrh.mjs').then(n => n._)}), () => "./*.md");
   const sortedPosts = posts.sort(
     (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
   );
