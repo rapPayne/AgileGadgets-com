@@ -15,9 +15,9 @@ categories: ["AI", "machine learning"]
 
 > **"I need more control in the formatting of prompts and responses."**
 
-The solution to these problems is run your own LLM installed on your own machine. No cost, no latency, no data sharing, full control. It is surprisingly simple.
+The solution to these problems is to run your own LLM installed on your own machine. No cost, no latency, no data sharing, full control. It is surprisingly simple.
 
-I initially thought I'd need a supercomputer with tons of disk space and GPU power. And you do -- to **train** the model. But to just **run** it, even a laptop is fine.
+I initially thought I'd need a supercomputer with tons of disk space and GPU power. And I would -- to **train** the model. But to just **run** it, even a laptop is fine.
 
 It's surprisingly simple. We'll do these four steps ...
 1) get an engine, 
@@ -27,7 +27,7 @@ It's surprisingly simple. We'll do these four steps ...
 
 ## Step 1: Download the Ollama engine
 
-Go to <a href="https://ollama.com/download" target="_blank" rel="noopener noreferrer">Ollama</a> and follow the installation instructions for your operating system. 
+Go to <a href="https://ollama.com/download" target="_blank" rel="noopener noreferrer">Ollama</a> and grab the installer for your operating system. Run the installer and follow the prompts. It's basically just hit the <strong>Next</strong> button a few times.
 
 Verify it's running by executing:
 
@@ -36,7 +36,7 @@ ollama version
 ```
 
 ## Step 2: Download a model
-To install a model, it's simply "ollama pull <model_name>"
+To install a model, simply run "ollama pull <model_name>" from any shell.
 
 You have tons of models to choose from. Go <a href="https://ollama.com/search" target="_blank" rel="noopener noreferrer">here</a> to get a list of them.
 
@@ -60,13 +60,13 @@ Simple:
 ollama run llama3.1
 ```  
 
-That's it. You now have an LLM working on your machine. All that's left to do is work with the model; prompt it.
+That's it. You now have an LLM working on your machine. All that's left to do is work with the model by prompting it.
 
 ## Step 4: prompt the model
 You can do this in two ways: interactively, or programmatically.
 
 ### Interactively
-You can use a simple command line interface to interact with the model. Just type your prompts after the `>>>` and see the responses.
+You can use a simple command line interface to interact with the model. Just type your prompts after the ">>>" and see the responses.
 
 ```bash
 $ ollama run llama3.1
@@ -84,7 +84,7 @@ And crossed the finish line in good time!
 This is cute and all but not practical for real applications. You probably did all this to create an app. So let's see how to use your new service in an app.
 
 ### Programmatically
-All you need to do is send a POST request to `http://localhost:11434/api/generate` with your prompt. Send this as the body:
+Any app can send a POST request to `http://localhost:11434/api/generate` with your prompt. Here's an example body:
 
 ```
 {
@@ -110,6 +110,8 @@ You'll get this response:
   "eval_duration": 701249583
 }
 ```
+As you can plainly see it's simple JSON. The data you want is in the "response" field.
+
 ## Bonus! Processing the streaming value
 If you set `"stream": true` in your request, you'll receive a stream of responses as the model generates them. This is useful for long prompts or when you want to display the output in real-time. Here's a node snippet to show how to handle that.
 ```javascript
@@ -128,10 +130,10 @@ If you set `"stream": true` in your request, you'll receive a stream of response
   let fullText = "";
 
   while (true) {
-    const { done, value } = await reader.read();
+    const { done, response } = await reader.read();
     if (done) break;
 
-    const chunk = decoder.decode(value, { stream: true }).trim();
+    const chunk = decoder.decode(response, { stream: true }).trim();
     // each chunk may contain multiple JSON lines
     for (const line of chunk.split("\n")) {
       if (!line) continue;
