@@ -19,6 +19,7 @@ type Frontmatter = {
 
 type Layout = '../../layouts/BlogPost.astro';  // So we can add new layouts later if we choose.
 type Tag = 'a11y'
+  | 'agentic AI'
   | 'AI'
   | 'API'
   | 'data science'
