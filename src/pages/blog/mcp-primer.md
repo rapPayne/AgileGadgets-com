@@ -10,30 +10,32 @@ cloudinaryImageFileName: v1757022739/mcp-primer_ckdyjp.png
 categories: ["ai", "vibe-coding", "mcp"]
 ---
 
-Model Context Protocol (MCP) has been described as the USB for AI. I like that. It's an emerging open standard that lets large language models (LLMs) talk to tools and to each other. 
+Model Context Protocol (MCP) has been described as the USB for AI. I like that. It's an open standard that lets large language models (LLMs) talk to tools and to each other. Despite its newness, MCP is the defacto standard. You should definitely use it.
 
 ## What kinds of tools can MCP connect to?
 Remember, your LLM was trained on data as of a certain date. It doesn't know anything that happened after that date. But with MCP, it can call out to tools that do know about the world. For example:
 - **APIs**: Weather, stock prices, news, etc.
 - **Databases**: Query your SQL or NoSQL databases.
 - **Files**: Read or write files on disk.
-- **Other Models**: Call other LLMs.
+- **Other Models**: Prompt other LLMs.
 - **User Input**: Direct content from a human.
 - **Web Scraping**: Fetching data from websites in real-time.
-- **Custom Code**: Any function you want to write in any language.
+- **Custom Code**: Any function you write in any language.
 
 ## Why have it?
 
 If we didn't have MCP, then every LLM would have a different way of talking. That would be horrible for devs, who'd have to re-learn how to communicate with every new model. But with MCP, they can learn one protocol and use it every time.
 
+This is where the "USB for AI" analogy fits. Without a universal standard, every device would need its own unique port and cable. Nightmare-inducing! In the same way, MCP give us a universal way for any LLM to talk with any tool.
+
 ## Architecture
 
-MCP operates on a client-server model sending POST requests over HTTP. Basically it's a tiny web service listening for JSON requests and responding with JSON results.
+MCP has us sending POST requests over HTTP. Basically an MCP server is a tiny web service listening for JSON requests and responding with JSON results.
 
 - **MCP server**: The tool being exposed.
 - **Clients**: The App communicating with the AI.
 
-## Common Messages
+## The Messages
 - **Who are you?** → getServerInfo
 - **What do you have?** → resources/list | tools/list | events/list
 - **Gimme that thing.** → resources/get
@@ -51,7 +53,7 @@ That’s 80% of traffic in MCP. Here's the tea.
   "method": "getServerInfo"
 }
 ```
-Response:
+Example response:
 ```json
 {
   "jsonrpc": "2.0",
@@ -63,7 +65,7 @@ Response:
   }
 }
 ```
-"capabilities" will always be an array with some combination of "resources", "tools", and "tools/list". More may be added in the future.
+"capabilities" will always be an array with some combination of 1) "resources", 2) "tools", and 3) "tools/list".
 
 ---
 
@@ -72,10 +74,10 @@ Response:
 {
   "jsonrpc": "2.0",
   "id": 2,
-  "method": "resources/list" # or tools/list or events/list
+  "method": "resources/list" # or "tools/list" or "events/list"
 }
 ```
-Response:
+Example response:
 ```json
 {
   "jsonrpc": "2.0",
@@ -132,7 +134,7 @@ Response:
         "title": "Rap Payne wins lottery again",
         "author": "Amanda Silberling",
         "source": "TechCrunch",
-        "publishedAt": "2025-09-17T14:00:00Z",
+        "publishedAt": "2025-12-17T14:00:00Z",
         "url": "https://techcrunch.com/article123",
         "summary": "Rap Payne has once again defied the odds by winning the lottery. Can you believe the luck on this guy?"
       },
@@ -140,7 +142,7 @@ Response:
         "title": "Breakthrough in Quantum Computing Announced",
         "author": "Megan Farokhmanesh",
         "source": "Wired",
-        "publishedAt": "2025-09-17T12:45:00Z",
+        "publishedAt": "2025-12-17T12:45:00Z",
         "url": "https://wired.com/article789",
         "summary": "Researchers have made a significant advancement in quantum computing, potentially revolutionizing the field."
       },
@@ -150,12 +152,13 @@ Response:
       "category": "technology",
       "country": "tx",
       "totalResults": 10,
-      "fetchedAt": "2025-09-17T14:05:00Z"
+      "fetchedAt": "2025-12-17T14:05:00Z"
     }
   }
 }
 ```
 ---
+That's resources. Now for tools.
 
 **tools/list**: What can you do?
 ```json
@@ -207,7 +210,7 @@ Response:
   "params": {
     "name": "getWeather",
     "arguments": {
-      "location": "Arlen"
+      "location": "Arlen, TX"
     }
   }
 }
@@ -228,6 +231,6 @@ Response:
 ---
 
 ## Final thoughts on MCP
-This overview and set of examples should be enough to give you a good understanding of how MCP works. We made no attempt to cover every detail of MCP here. For all the official details, visit the <a href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener noreferrer">official MCP site</a>.
+This super quick overview and examples are enough to give you a good understanding of how MCP works. We made no attempt to cover every detail of MCP here. For all the official details, visit the <a href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener noreferrer">official MCP site</a>.
 
 Thank God for MCP! It is going to make communication between LLMs and tools doable and enable agentic AI and more capable generative AI something that any of us can write. 
