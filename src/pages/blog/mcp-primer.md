@@ -108,6 +108,7 @@ Example response:
 }
 ```
 The MCP spec requires certain fields, but doesn't limit you to just those fields. You can add whatever fields you want.
+
 ---
 
 **resources/get**: That thing you said you have? Give it to me.
