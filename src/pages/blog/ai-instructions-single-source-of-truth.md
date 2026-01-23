@@ -13,6 +13,7 @@ categories: ["ai", "vibe-coding"]
 You're 10x-ing yourself using AI coding assistants. Good for you. You're documenting your team's standards in project files like README.md and CONTRIBUTING.md. Even better. And you're smart enough to want the two-for-one deal of using those same files for both purposes - informing your human teammates and your AI tools. But there's a problem; every AI assistant has their own way of configuring instructions and there's no concensus among them[^1]:
 - **Claude Code** looks for `CLAUDE.md`
 - **Cursor** uses `.cursorrules`
+- **Antigravity** reads `README.md` and `CONTRIBUTING.md`
 - **Continue.dev** wants `.continue/config.json`
 - **Windsurf** checks `.windsurf/rules`
 - **GitHub Copilot** reads comments in your code
