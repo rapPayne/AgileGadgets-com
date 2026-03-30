@@ -1,11 +1,11 @@
 ---
 title: "Run LLMs Locally with Ollama - A Practical Guide"
 description: "Stop paying API fees and worrying about rate limits. Run powerful language models like Llama, Mistral, and Phi on your own machine with Ollama."
-pubDate: 2025-12-27
+pubDate: 2025-03-30
 author: Rap Payne
 time-to-read: 12 minutes
 url: /blog/ollama-primer
-cloudinaryImageFileName: v1746633734/ollama-primer_i2hd4j.png
+cloudinaryImageFileName: v1774908948/ollama-primer_pxzyzt.png
 categories: ["ai", "llm", "tutorial", "local development"]
 ---
 
