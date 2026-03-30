@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "Vibe-coding writes outdated code – How to fix that"
 description: "Use context7's MCP agent to teach your LLM how to write modern, not outdated code. This guide shows you how to steer any AI coding assistant toward current best practices"
 pubDate: 2025-09-10

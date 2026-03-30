@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "All AI Coding Assistants and humans can read ONE set of documentation"
 description: "Here's how to create a single source of truth that literally every AI tool and human can read. Stop duplicating your instructions."
 pubDate: 2026-01-20

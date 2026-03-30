@@ -1,18 +1,14 @@
 ---
 import TagChip from "./TagChip.astro";
 import { cloudinaryImageBaseUrl } from "../constants";
+import type { CollectionEntry } from 'astro:content';
+
 interface Props {
-  post: {
-    title: string;
-    description: string;
-    tags: string[];
-    mainImageUrl: string;
-    frontmatter: any;
-  };
+  post: CollectionEntry<'blog'>;
 }
 
 const { post } = Astro.props;
-const { title, description, tags, cloudinaryImageFileName, homePageImageUrl, url } = post.frontmatter;
+const { title, description, categories, cloudinaryImageFileName, homePageImageUrl, url } = post.data;
 ---
 
 <li>
@@ -24,7 +20,7 @@ const { title, description, tags, cloudinaryImageFileName, homePageImageUrl, url
     <div>
       <h4>{title}</h4>
       <p>{description}</p>
-      {tags?.map((tag: string) => <TagChip tag={tag} />)}
+      {categories?.map((tag: string) => <TagChip tag={tag} />)}
     </div>
   </a>
 </li>

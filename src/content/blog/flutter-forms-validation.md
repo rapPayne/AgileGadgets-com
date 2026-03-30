@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: Flutter Forms Validation - the Ultimate Guide
 pubDate: 2020-10-24
 author: Rap Payne

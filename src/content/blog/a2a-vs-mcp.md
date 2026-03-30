@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "A2A vs MCP: When to use Agent-to-Agent vs Model Context Protocol"
 description: "Practical guidance for devs: the difference between AI agents and tools and when to use A2A vs MCP in agentic AI systems."
 pubDate: 2025-12-12

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "TypeScript: Types vs Interfaces vs Classes – Which Should You Use?"
 description: "A practical guide for experienced JavaScript devs: when to use a TypeScript type, interface, or class. Includes a handy flowchart."
 pubDate: 2025-06-10

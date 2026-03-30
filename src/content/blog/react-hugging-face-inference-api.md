@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "React with AI: Quickly Add an LLM in a React App"
 description: "How your React app can consume an AI/ML model via the Hugging Face Inference API. We make it quick and easy."
 pubDate: 2025-05-19

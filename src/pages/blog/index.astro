@@ -4,10 +4,12 @@ import TagChip from "../../components/TagChip.astro";
 import { format } from "date-fns";
 import { cloudinaryImageBaseUrl } from "../../constants";
 
+import { getCollection } from 'astro:content';
+
 //TODO: Need to read the "tags" querystring and filter.
-const posts = await Astro.glob("./*.md");
+const posts = await getCollection('blog');
 const sortedPosts = posts.sort(
-  (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime(),
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
 );
 ---
 
@@ -17,23 +19,23 @@ const sortedPosts = posts.sort(
     <div class="postsList">
       {
         sortedPosts.map((post) => (
-          <div class="article" role="button" onclick={`location.href='${post.url}'`} tabindex="0">
+          <div class="article" role="button" onclick={`location.href='${post.data.url}'`} tabindex="0">
             <img
               src={
-                post.frontmatter.listImageUrl ??
-                `${cloudinaryImageBaseUrl}/c_fill,ar_1:1,w_200/q_auto/${post.frontmatter.cloudinaryImageFileName}`
+                post.data.listImageUrl ??
+                `${cloudinaryImageBaseUrl}/c_fill,ar_1:1,w_200/q_auto/${post.data.cloudinaryImageFileName}`
               }
               alt=""
             />
 
-            <time datetime={post.frontmatter.pubDate}>
-              {format(new Date(post.frontmatter.pubDate), "MMMM d, yyyy")}
+            <time datetime={post.data.pubDate.toISOString()}>
+              {format(post.data.pubDate, "MMMM d, yyyy")}
             </time>
-            <span class="author">{post.frontmatter.author && `by ${post.frontmatter.author}`}</span>
-            <h2 class="title">{post.frontmatter.title}</h2>
-            {post.frontmatter.description && <p class="description">{post.frontmatter.description}</p>}
+            <span class="author">{post.data.author && `by ${post.data.author}`}</span>
+            <h2 class="title">{post.data.title}</h2>
+            {post.data.description && <p class="description">{post.data.description}</p>}
             <span class="tags">
-              {post.frontmatter.tags?.map((t: string) => (
+              {post.data.categories?.map((t: string) => (
                 <TagChip tag={t} />
               ))}
             </span>

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 pubDate: 2022-01-22
 author: Rap Payne
 title: React vs Angular vs Vue vs Svelte; Which Framework Should You Choose?

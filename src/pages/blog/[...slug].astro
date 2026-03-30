@@ -1,0 +1,15 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+const { slug } = Astro.params;
+const post = await getEntry('blog', slug as string);
+
+if (!post) return Astro.redirect('/404');
+
+const { Content } = await render(post);
+---
+
+<BlogPost frontmatter={post.data}>
+  <Content />
+</BlogPost>

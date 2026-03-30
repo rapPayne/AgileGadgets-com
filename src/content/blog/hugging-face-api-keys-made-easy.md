@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "Hugging Face API Keys made Easy"
 description: "You need Hugging Face security tokens to use their models and they're not super easy to understand. We spill the tea in this post."
 pubDate: 2025-05-12

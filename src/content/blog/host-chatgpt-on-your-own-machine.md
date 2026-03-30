@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "How to get a ChatGPT-like service running on your own machine"
 description: "Protect your privacy, save tons of money and have ultimate control over your own LLM. This guide walks you through setting up a local, private ChatGPT-style AI assistant."
 pubDate: 2025-09-01

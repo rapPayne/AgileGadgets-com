@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "A11y: The Ethical Dilemma Every Dev Needs to Face"
 pubDate: 2025-04-21
 author: Rap Payne

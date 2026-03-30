@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "An MCP primer - AI communication standards"
 description: "Stop AI hallucinations! Learn how the Model Context Protocol (MCP) lets devs connect LLMs to live docs, APIs, databases, and tools so your assistant always knows current facts"
 pubDate: 2025-09-17

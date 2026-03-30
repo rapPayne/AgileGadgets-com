@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "The secret to getting Jest to work with ES Modules"
 description: "How to enable to use ES modules in a way that works on Windows, Mac, and Linux. The well-known problem is solved in a quick-and-dirty way and a graceful way."
 pubDate: 2025-07-02

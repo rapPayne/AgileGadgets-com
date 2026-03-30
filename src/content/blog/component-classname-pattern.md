@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: Stop writing React local styles! Use the Component-Classname Pattern
 pubDate: 2024-04-10
 author: Rap Payne

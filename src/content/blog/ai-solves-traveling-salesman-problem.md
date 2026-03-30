@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: "The Traveling Salesman Problem, AI, and the Beauty of Good Enough"
 pubDate: 2025-11-05
 author: Rap Payne
