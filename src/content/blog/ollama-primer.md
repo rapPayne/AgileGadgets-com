@@ -19,7 +19,7 @@ Instead of this:
 ```javascript
 // Sending data to OpenAI
 const response = await openai.chat.completions.create({
-  model: "gpt-4",
+  model: "gpt-5",
   messages: [{ role: "user", content: "Hello" }]
 });
 ```
@@ -47,7 +47,7 @@ Easiest option is Homebrew:
 brew install ollama
 ```
 
-Or download the app from [ollama.ai](https://ollama.ai/download) and drag it to Applications.
+Or download the app from <a href="https://ollama.ai/download" target="_blank" rel="noopener noreferrer">ollama.ai</a> and drag it to Applications.
 
 ### Linux
 
@@ -56,13 +56,11 @@ One-liner install:
 curl -fsSL https://ollama.ai/install.sh | sh
 ```
 
-This works on most distros (Ubuntu, Debian, Fedora, CentOS, etc.). It installs Ollama as a systemd service that starts automatically.
+This works on most distros (Ubuntu, Debian, Fedora, CentOS, etc.). It installs Ollama as a system service that starts automatically.
 
 ### Windows
 
-Download the installer from [ollama.ai](https://ollama.ai/download) and run it. Ollama runs as a Windows service in the background.
-
-Or use WSL2 and follow the Linux instructions. This is what I use.
+Download the installer from <a href="https://ollama.ai/download" target="_blank" rel="noopener noreferrer">ollama.ai</a> and run it. Ollama runs as a Windows service in the background.
 
 ## Basic Usage
 
@@ -78,7 +76,7 @@ Start with a small, fast model like Phi:
 ollama run phi3
 ```
 
-First time you run this, Ollama downloads the model (about 2GB). This might take a few minutes depending on your internet connection. After that, it's instant.
+First time you run this, Ollama downloads the model (about 2.2GB). This might take a few minutes depending on your internet connection. After that, it's instant.
 
 You'll drop into a chat interface:
 ```
@@ -115,7 +113,7 @@ ollama run gemma2
 ollama run deepseek-coder
 ```
 
-Browse all available models at [ollama.ai/library](https://ollama.ai/library).
+Browse all available models at <a href="https://ollama.ai/library" target="_blank" rel="noopener noreferrer">ollama.ai/library</a>.
 
 ### Model Size Considerations
 
