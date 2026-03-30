@@ -125,8 +125,42 @@ Models come in different sizes. Bigger is usually better but requires more RAM:
 
 If you have an NVIDIA GPU with enough VRAM, Ollama uses it automatically and everything runs much faster.
 
-RAP how to estimate RAM needs based on model size and quantization.
-RAP how to see if you have a GPU and its VRAM
+### Estimating RAM needs
+
+A model's RAM requirement depends on its size and quantization level. Quantization compresses the model — less precision, less RAM, slightly lower quality.
+
+A rough formula: **RAM needed ≈ (parameters in billions) × (bits per weight) ÷ 8**
+
+| Model | Quantization | Approx. RAM |
+|-------|-------------|-------------|
+| 7B    | q4 (4-bit)  | ~4 GB       |
+| 7B    | q8 (8-bit)  | ~8 GB       |
+| 13B   | q4          | ~8 GB       |
+| 13B   | q8          | ~16 GB      |
+| 70B   | q4          | ~40 GB      |
+
+When in doubt, check the model page on [ollama.ai/library](https://ollama.ai/library) — it lists the RAM requirement for each variant.
+
+### Checking your GPU and VRAM
+
+**macOS:**
+```bash
+system_profiler SPDisplaysDataType | grep -E "Chipset|VRAM"
+```
+
+**Linux (NVIDIA):**
+```bash
+nvidia-smi
+```
+
+**Windows:**
+```bash
+nvidia-smi
+```
+
+Or open Task Manager → Performance → GPU to see VRAM visually.
+
+If `nvidia-smi` isn't found, you either don't have an NVIDIA GPU or the drivers aren't installed. AMD GPU support in Ollama is limited on non-Linux systems.
 
 ## Essential Commands
 
@@ -260,7 +294,7 @@ The JavaScript client handles all the HTTP details and gives you a clean async i
 
 Install the package:
 ```bash
-pip install ollama
+uv pip install ollama # or just `pip install ollama`
 ```
 
 Basic usage:
