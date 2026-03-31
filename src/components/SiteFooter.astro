@@ -12,31 +12,12 @@ const socialItems: SocialItem[] = [
   { label: "X", href: "https://x.com/rapPayne", icon: "fa-x-twitter" },
 ];
 
-let sortedPosts: Post[] = [];
-try {
-  // Get current path to highlight active link
-  // const pathname = new URL(Astro.request.url).pathname;
+import { getCollection } from 'astro:content';
 
-  // Use import.meta.glob to import the Markdown files
-  const posts = import.meta.glob("../pages/blog/*.md");
-
-  // Convert the object returned by import.meta.glob into an array of promises
-  const postPromises = Object.entries(posts).map(async ([_, promiseResolver]) => {
-    const post = await promiseResolver(); // Resolve the import
-    return post;
-  });
-
-  // Wait for all promises to resolve
-  const resolvedPosts: Post[] = (await Promise.all(postPromises)) as Post[];
-
-  // Sort the posts by date
-  sortedPosts = resolvedPosts
-    .slice() // Create a shallow copy of the array
-    .sort((a: Post, b: Post) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime())
-    .slice(0, 5);
-} catch (ex) {
-  console.error("Error getting posts:", ex);
-}
+const posts = await getCollection('blog');
+const sortedPosts = posts
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 5);
 ---
 
 <footer id="siteFooter">
@@ -46,7 +27,7 @@ try {
       {
         sortedPosts.map((post) => (
           <li>
-            <a href={post.frontmatter.url}>{post.frontmatter.title}</a>
+            <a href={post.data.url}>{post.data.title}</a>
           </li>
         ))
       }
