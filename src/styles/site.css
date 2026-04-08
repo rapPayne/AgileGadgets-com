@@ -49,14 +49,16 @@
 
 code {
   font-family:
+    Consolas,
+    "Fira Code",
+    "JetBrains Mono",
     Menlo,
     Monaco,
-    Lucida Console,
-    Liberation Mono,
-    DejaVu Sans Mono,
-    Bitstream Vera Sans Mono,
-    Courier New,
+    "Courier New",
     monospace;
+  background: rgba(128, 128, 128, 0.15);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
 }
 
 .rapPaynesHandwriting {
