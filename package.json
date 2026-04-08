@@ -16,7 +16,9 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "astro": "^6.1.2",
     "date-fns": "^4.1.0",
-    "font-awesome": "^4.7.0",
-    "typescript": "^6.0.2"
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
   }
 }
