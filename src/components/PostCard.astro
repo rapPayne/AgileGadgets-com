@@ -20,7 +20,9 @@ const { title, description, categories, cloudinaryImageFileName, homePageImageUr
     <div>
       <h4>{title}</h4>
       <p>{description}</p>
-      {categories?.map((tag: string) => <TagChip tag={tag} />)}
+      <div class="tags">
+        {categories?.map((tag: string) => <TagChip tag={tag} />)}
+      </div>
     </div>
   </a>
 </li>
@@ -45,6 +47,10 @@ const { title, description, categories, cloudinaryImageFileName, homePageImageUr
 
     div {
       padding: 0.5rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
     }
     h4 {
       text-align: center;
