@@ -37,6 +37,21 @@ const mainImgSrc =
   </article>
 </Layout>
 
+<script>
+  import mermaid from 'mermaid';
+  mermaid.initialize({ startOnLoad: false });
+
+  document.querySelectorAll('pre[data-language="mermaid"]').forEach((pre) => {
+    const source = pre.querySelector('code')?.textContent?.trim() ?? '';
+    const div = document.createElement('div');
+    div.className = 'mermaid';
+    div.textContent = source;
+    pre.replaceWith(div);
+  });
+
+  await mermaid.run({ querySelector: '.mermaid' });
+</script>
+
 <style>
   .blog-post {
     font-family: Menlo, Arial, sans-serif;

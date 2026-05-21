@@ -68,8 +68,25 @@ To use images in your project, upload them in your Media Library and use the URL
 ```
 Cloudinary can auto-crop and auto process images. You specify the transformations in the URL. See your Keep note "How to blog".
 
-## Charts through Mermaid
-TDB
+## Diagrams through Mermaid
+
+Mermaid diagrams render **client-side** in the browser. No build-time dependencies (no Playwright, no headless browser).
+
+### How it works
+
+1. Write a fenced code block with the `mermaid` language tag in any blog post:
+   ````markdown
+   ```mermaid
+   flowchart TD
+       A[Start] --> B[End]
+   ```
+   ````
+2. Astro/Shiki renders it as `<pre data-language="mermaid">` — a styled code block — on the server.
+3. On page load, a script in `src/layouts/BlogPost.astro` finds every `pre[data-language="mermaid"]`, extracts the diagram source, swaps the element for a `<div class="mermaid">`, and calls `mermaid.run()` to render the SVG.
+
+### Why client-side?
+
+The alternative (server-side via `rehype-mermaid`) requires Playwright and a headless Chromium browser. Chromium is ~170 MB — Netlify's serverless function limit is 50 MB. The page silently fails to render. Client-side rendering avoids all of that with no trade-offs for a blog.
 
 ## TypeScript
 Strict TS is in effect. Look at tsconfig.json for settings.
