@@ -19,14 +19,68 @@ We'll build a natural language interface for any SQL database — ask it a quest
 
 We're using Python, LangChain, Anthropic Claude, and PostgreSQL but the techniques apply to any other technology. Feel free to plug in your own. The full pipeline:
 
-```mermaid
-flowchart TD
-    A[User Question] --> B[LLM Generates SQL]
-    B --> C[Validate SQL]
-    C --> D[Execute Query]
-    D --> E[LLM Summarizes Results]
-    E --> F[Answer]
-```
+<svg viewBox="0 0 220 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: User Question leads to LLM Generates SQL, then Validate SQL, then Execute Query, then LLM Summarizes Results, then Answer." style="display: block; width: 100%; max-width: 260px; margin: 0 auto;">
+  <style>
+    .pipeline-node rect {
+      fill: light-dark(#fbfbfb, #320a28);
+      stroke: light-dark(#003F91, #8390FA);
+      stroke-width: 2;
+    }
+    .pipeline-node text {
+      fill: light-dark(#320a28, #fbfbfb);
+      font-family: Menlo, Arial, sans-serif;
+      font-size: 12px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .pipeline-arrow {
+      stroke: light-dark(#28536b, #AFD2E9);
+      stroke-width: 1.5;
+      fill: none;
+      marker-end: url(#pipeline-arrowhead);
+    }
+  </style>
+  <defs>
+    <marker id="pipeline-arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="context-stroke" />
+    </marker>
+  </defs>
+
+  <g class="pipeline-node">
+    <rect x="10" y="10" width="200" height="38" rx="6" />
+    <text x="110" y="29">User Question</text>
+  </g>
+  <path class="pipeline-arrow" d="M110,48 V70" />
+
+  <g class="pipeline-node">
+    <rect x="10" y="70" width="200" height="38" rx="6" />
+    <text x="110" y="89">LLM Generates SQL</text>
+  </g>
+  <path class="pipeline-arrow" d="M110,108 V130" />
+
+  <g class="pipeline-node">
+    <rect x="10" y="130" width="200" height="38" rx="6" />
+    <text x="110" y="149">Validate SQL</text>
+  </g>
+  <path class="pipeline-arrow" d="M110,168 V190" />
+
+  <g class="pipeline-node">
+    <rect x="10" y="190" width="200" height="38" rx="6" />
+    <text x="110" y="209">Execute Query</text>
+  </g>
+  <path class="pipeline-arrow" d="M110,228 V250" />
+
+  <g class="pipeline-node">
+    <rect x="10" y="250" width="200" height="38" rx="6" />
+    <text x="110" y="269">LLM Summarizes Results</text>
+  </g>
+  <path class="pipeline-arrow" d="M110,288 V310" />
+
+  <g class="pipeline-node">
+    <rect x="10" y="310" width="200" height="38" rx="6" />
+    <text x="110" y="329">Answer</text>
+  </g>
+</svg>
 
 Not all that complex. Extremely capable. Let's build it.
 
