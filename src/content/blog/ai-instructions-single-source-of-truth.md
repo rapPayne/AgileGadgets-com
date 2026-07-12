@@ -11,13 +11,14 @@ categories: ["ai", "vibe-coding"]
 
 You're 10x-ing yourself using AI coding assistants. Good for you. You're documenting your team's standards in project files like README.md and CONTRIBUTING.md. Even better. And you're smart enough to want the two-for-one deal of using those same files for both purposes - informing your human teammates and your AI tools. But there's a problem; every AI assistant has their own way of configuring instructions and there's no concensus among them[^1]:
 - **Claude Code** looks for `CLAUDE.md`
-- **Cursor** uses `.cursorrules`
+- **Cursor** uses `.cursor/rules`
 - **Antigravity** reads `README.md` and `CONTRIBUTING.md`
 - **Continue.dev** wants `.continue/config.json`
 - **Windsurf** checks `.windsurf/rules`
 - **GitHub Copilot** reads comments in your code
 - **JetBrains AI** scans files under /docs
 - **Codeium Classic** digests README.md and nearby .md files
+- **A bunch of others**[^2] read `AGENTS.md`
 
 So you end up either:
 1. Only configuring one tool (and suffering when you use others)
@@ -25,15 +26,15 @@ So you end up either:
 
 Here's a better approach.
 
-## Create AI_INSTRUCTIONS.md
+## Create AGENTS.md
 
-Write one file — `AI_INSTRUCTIONS.md` — that contains all your project-specific instructions. Then create tiny shim files for each AI tool that simply point to that canonical source.
+Write one file — `AGENTS.md` — that contains all your project-specific instructions. Then create tiny shim files for each AI tool that simply point to that canonical source.
 
 Your file structure looks sort of like this:
 
 ```
 /
-├─ AI_INSTRUCTIONS.md        ← canonical source of truth
+├─ AGENTS.md        ← canonical source of truth
 ├─ CLAUDE.md                 ← Claude-specific shim
 ├─ .cursorrules              ← Cursor shim
 ├─ .continue/config.json     ← Continue.dev shim
@@ -47,28 +48,28 @@ Your file structure looks sort of like this:
 ```
 
 ## What goes in your shim files?
-Each shim file is tiny. It just tells the AI to read `AI_INSTRUCTIONS.md`.
+Each shim file is tiny. It just tells the AI to read `AGENTS.md`.
 
 Markdown and plain text files like `CLAUDE.md` or `.cursorrules` will say:
 ```markdown
-Read and follow **AI_INSTRUCTIONS.md**  
+Read and follow **AGENTS.md**  
 Do not infer behavior from this file alone.
 ```
 
 JSON-based instructions like `.continue/config.json` will say:
 ```json
 {
-  "systemMessage": "Read /AI_INSTRUCTIONS.md for complete project documentation.
+  "systemMessage": "Read /AGENTS.md for complete project documentation.
 }
 ```
 See? Simple.
 
-## What goes in AI_INSTRUCTIONS.md?
+## What goes in AGENTS.md?
 Literally this:
 ```markdown
 Follow all conventions and patterns described in these files:
 
-1. /AI_INSTRUCTIONS.md (start here - this is the canonical source)
+1. /AGENTS.md (start here - this is the canonical source)
 2. /README.md
 3. /docs/ARCHITECTURE.md
 4. /docs/CODING-STANDARDS.md
@@ -89,7 +90,7 @@ You may put AI-specific instructions in here that don't belong anywhere else, li
 - **Project overview**: What you're building and why
 - **Instructions**: For human readers to compile and run the project
 - **Environment setup**: Required tools, versions, configurations
-- **AI usage**: Pointing to `AI_INSTRUCTIONS.md` as the canonical source
+- **AI usage**: Pointing to `AGENTS.md` as the canonical source
 
 ```markdown
 ## Project Overview
@@ -103,7 +104,7 @@ risus a elit.
 ## AI Usage
 This repository is used with AI coding assistants.
 
-Canonical instructions live in **AI_INSTRUCTIONS.md**.
+Canonical instructions live in **AGENTS.md**.
 Please read that file before making or suggesting changes.
 ```
 
@@ -133,10 +134,12 @@ Please read that file before making or suggesting changes.
 - **Semantic conventions**: How to structure code for readability and maintainability
 
 ## Caution on context overflow
-Keep in mind that the LLM context window is limited. If your project is large, you may need to prioritize which files to include in `AI_INSTRUCTIONS.md` or break it down further and include only the most relevant parts.
+Keep in mind that the LLM context window is limited. If your project is large, you may need to prioritize which files to include in `AGENTS.md` or break it down further and include only the most relevant parts.
 
 ## The brilliant part
-When you need to update your conventions, rules, patters, whatever, you change **one file**. Every AI tool picks up the changes because they all read from that single source.
+When you need to update your conventions, rules, patterns, whatever, you change **one file**. Every AI tool picks up the changes because they all read from that single source.
 
 ---
 [^1]: This list is approximate. The techniques are constantly changing. If you spot an error or outdated information, please let me know and I'll fix it. You can catch me at <a href="https://linkedin.com/in/rapPayne" target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a href="https://x.com/rapPayne" target="_blank" rel="noopener noreferrer">X</a>.
+
+[^2]: As of this writing, tools that natively read `AGENTS.md` include OpenAI Codex, Google Jules, Google Gemini CLI, Cursor (coexists with .cursor/rules), Devin, Sourcegraph Amp, Aider, RooCode, Kilo Code, Factory, opencode, goose, Zed, Warp, VS Code, JetBrains Junie, GitHub Copilot's coding agent, Windsurf, and Augment Code. See <a href="https://agents.md" target="_blank" rel="noopener noreferrer">agents.md</a> for the current list.
