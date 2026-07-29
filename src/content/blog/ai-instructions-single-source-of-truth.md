@@ -15,7 +15,7 @@ You're 10x-ing yourself using AI coding assistants. Good for you. You're documen
 - **Antigravity** reads `README.md` and `CONTRIBUTING.md`
 - **Continue.dev** wants `.continue/config.json`
 - **Windsurf** checks `.windsurf/rules`
-- **GitHub Copilot** reads comments in your code
+- **GitHub Copilot** reads `.github/copilot-instructions.md`
 - **JetBrains AI** scans files under /docs
 - **Codeium Classic** digests README.md and nearby .md files
 - **A bunch of others**[^2] read `AGENTS.md`
@@ -38,6 +38,7 @@ Your file structure looks sort of like this:
 ├─ CLAUDE.md                 ← Claude-specific shim
 ├─ .cursorrules              ← Cursor shim
 ├─ .continue/config.json     ← Continue.dev shim
+├─ .github/copilot-instructions.md ← Copilot shim
 ├─ .windsurf/rules/shim      ← Windsurf shim
 ├─ README.md
 ├─ CONTRIBUTING.md
