@@ -6,12 +6,12 @@ This is the canonical AI instructions file for this project. All AI tool shims (
 
 - `npm run dev` — start dev server at localhost:4321
 - `npm run build` — type-check and build to `./dist/`
-- `npm run preview` — Netlify preview (requires `netlify-cli`)
+- `npm run preview` — serve the built `./dist/` locally via `astro preview`
 - `npm run astro` — direct Astro CLI access
 
 ## Architecture
 
-**Tech stack:** Astro 6 (SSR, Netlify adapter), TypeScript strict mode, date-fns, Font Awesome. Deployed at https://agilegadgets.com.
+**Tech stack:** Astro 6 (static output, `output: 'static'`), TypeScript strict mode, date-fns, Font Awesome. Deployed to Netlify at https://agilegadgets.com; build config in `netlify.toml` (builds `./dist/`, no SSR adapter).
 
 ### Content Collections
 
