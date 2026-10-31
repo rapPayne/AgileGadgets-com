@@ -1,7 +1,6 @@
 ---
 import Layout from "./Layout.astro";
 import Metatags from "../components/Metatags.astro";
-import { format } from "date-fns";
 import { cloudinaryImageBaseUrl } from "../constants";
 
 const { frontmatter } = Astro.props;
@@ -26,7 +25,7 @@ const mainImgSrc =
       <h1>{frontmatter.title}</h1>
       <div class="metadata">
         <time datetime={frontmatter.pubDate}>
-          {format(new Date(frontmatter.pubDate), "MMMM d, yyyy")}
+          {new Date(frontmatter.pubDate).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}
         </time>
         {frontmatter.author && <span class="author">by {frontmatter.author}</span>}
       </div>

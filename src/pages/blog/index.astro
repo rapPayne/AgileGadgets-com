@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import TagChip from "../../components/TagChip.astro";
-import { format } from "date-fns";
 import { cloudinaryImageBaseUrl } from "../../constants";
 
 import { getCollection } from 'astro:content';
@@ -29,7 +28,7 @@ const sortedPosts = posts.sort(
             />
 
             <time datetime={post.data.pubDate.toISOString()}>
-              {format(post.data.pubDate, "MMMM d, yyyy")}
+              {post.data.pubDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}
             </time>
             <span class="author">{post.data.author && `by ${post.data.author}`}</span>
             <h2 class="title">{post.data.title}</h2>
